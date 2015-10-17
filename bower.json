@@ -1,0 +1,33 @@
+{
+  "name": "frontend-nanodegree-resume",
+  "homepage": "https://github.com/klong/frontend-nanodegree-resume",
+  "authors": [
+    "karl longman <karl_longman@hotmail.com>"
+  ],
+  "description": "P1 Online Resume",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "nanodegree",
+    "Front",
+    "end",
+    "developer",
+    "project",
+    "1",
+    "Online",
+    "Resume"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.1.5",
+    "bootstrap": "~3.3.5",
+    "platform.js": "platform#~1.3.0"
+  }
+}

@@ -21,28 +21,28 @@ h6 {
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 0 5% 1em;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 1.5em;
   color: #f5a623;
-  line-height: 48px;
+  line-height: 2em;
   display: inline;
 }
 
 h2 {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 2em;
   color: #999;
   line-height: 29px;
-  padding: 10px;
+  padding: 1.5em;
 }
 
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: darkslategrey;
   line-height: 22px;
 }
 
@@ -57,7 +57,7 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
+  padding: 20px 5%;
 
 }
 
@@ -80,9 +80,9 @@ h5 {
 }
 
 p {
-  font-size: 14px;
+  font-size: 1em;
   color: #333;
-  line-height: 21px;
+  line-height: 1.5;
 }
 
 a {
@@ -94,9 +94,9 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 0.8em;
   color: #f3f3f3;
-  line-height: 28px;
+  line-height: 1em;
 }
 
 #skills-h3 {
@@ -127,11 +127,6 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
-}
-
 .flex-box {
   display: -webkit-flex;
   display: flex;
@@ -151,9 +146,10 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
+}
+
+.biopic img {
+    border-radius: 50px 15px;
 }
 
 img {
@@ -161,49 +157,71 @@ img {
 }
 
 span {
-  padding: 5px;
+  padding: 1em;
 }
 
 #lets-connect {
   text-align: center;
 }
 
-/* Media queries to handle various device widths */
+#lets-connect h2 {
+    color: white;
+    color: rgba(255, 255, 255, 0.6);
 
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
 }
 
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
+.footer-contacts {
+/*    background-color: rgba(255,255,255,0.4);*/
 }
 
-@media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
+
+
+.bkgnd-pattern {
+    background: linear-gradient(rgba(255,123,100,0.8), rgba(255,255,255,0.2)) top left repeat-x, url(http://thumbs.dreamstime.com/x/ditsy-pattern-small-white-sakura-flowers-coral-red-background-seamless-vector-texture-web-print-spring-summer-fashion-36099903.jpg) repeat ;
+   /* background: linear-gradient(rgba(255,123,100,0.8), rgba(255,255,255,0.2)) top left repeat-x, url("../assets/images/ditsy-pattern-36099903.jpg") repeat ;*/
+    background-color: salmon;
+    background-size: auto 7em, auto auto;
+
 }
+
+.bkgnd-patternCSS1 {
+
+    background: linear-gradient(rgba(10,10,10,0.45), rgba(10,10,10,0.05)) top left repeat-x,
+repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,
+  hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+  hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,
+  hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+  hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+  hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, 0.5) 120px, hsla(197, 62%, 11%, 0.5) 140px
+  );/*last color is fallback*/
+    background-color: khaki;
+    background-size: auto auto, auto auto;
+
+}
+
+.bkgnd-patternCSS2 {
+    background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+}
+
+
 
 #map {
   display: block;
   height: 100%;
-  margin: 0 5%;
+  margin: 0 2%;
 }
 
 #mapDiv {
-  height: 400px;
+  height: 350px;
   width: 100%;
-  padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {
@@ -212,3 +230,31 @@ span {
     display: block;
   }
 }
+
+/* Media queries to handle various device widths */
+
+/*
+@media only screen and (max-width: 750px) {
+
+}
+*/
+
+/*
+@media only screen and (min-width: 1024px) {
+
+}
+*/
+
+
+/*
+@media only screen and (min-width: 750px) {
+
+     .biopic img {
+            border-radius: 90px 35px;
+    }
+
+  .welcome-message {
+    display: none;
+  }
+}
+*/
