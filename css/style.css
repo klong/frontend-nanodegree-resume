@@ -18,63 +18,59 @@ h6 {
   overflow: auto;
 }
 
+.container {
+    padding: 2em 0px 0px 0px;
+}
+
+
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5% 1em;
+  padding: 0 2em 1em;
 }
 
 h1 {
-  font-size: 1.5em;
-  color: #f5a623;
-  line-height: 2em;
-  display: inline;
+    font-size: 1.5em;
+    color: #f5a623;
+    line-height: 2em;
+    display: inline;
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 2em;
-  color: #999;
-  line-height: 29px;
-  padding: 1.5em;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1.4em;
+    padding: 1.8em;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: darkslategrey;
-  line-height: 22px;
+    font-style: italic;
+    font-size: 1em;
+    color: gray;
+    line-height: 1em;
 }
 
 h4 {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.7em;
   color: #4a4a4a;
-  line-height: 17px;
+  line-height: 1em;
 }
-
-h2,
-h3,
-h4,
-h5 {
-  padding: 20px 5%;
-
-}
-
 
 .date-text {
   font-style: italic;
-  font-size: 14px;
+  font-size: 0.8em;
   color: #999;
-  line-height: 16px;
+  line-height: 1em;
   float: left;
 }
 
 .location-text {
   font-style: italic;
-  font-size: 14px;
+  font-size: 0.7em;
   color: #999;
-  line-height: 16px;
+  line-height: 1em;
   float: right;
 
 }
@@ -82,21 +78,21 @@ h5 {
 p {
   font-size: 1em;
   color: #333;
-  line-height: 1.5;
+  line-height: 1.4em;
 }
 
 a {
   color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
+/*  margin-top: 10px;*/
   display: block;
 }
 
 .welcome-message {
   font-style: italic;
-  font-size: 0.8em;
-  color: #f3f3f3;
-  line-height: 1em;
+  font-size: 1.2em;
+  color: whitesmoke;
+  line-height: 1.3em;
 }
 
 #skills-h3 {
@@ -133,7 +129,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
+/*  padding: 10px;*/
 }
 
 .center-content {
@@ -157,31 +153,23 @@ img {
 }
 
 span {
-  padding: 1em;
+  padding: 0.3em;
 }
 
-#lets-connect {
+.lets-connect {
   text-align: center;
 }
 
-#lets-connect h2 {
-    color: white;
+.lets-connect h2 {
+    background-color: rgba(255, 255, 255,0.2);
+    color: snow;
     color: rgba(255, 255, 255, 0.6);
+    padding: 1em 0 1em 0;
 
 }
 
-.footer-contacts {
-/*    background-color: rgba(255,255,255,0.4);*/
-}
-
-
-
-.bkgnd-pattern {
-    background: linear-gradient(rgba(255,123,100,0.8), rgba(255,255,255,0.2)) top left repeat-x, url(http://thumbs.dreamstime.com/x/ditsy-pattern-small-white-sakura-flowers-coral-red-background-seamless-vector-texture-web-print-spring-summer-fashion-36099903.jpg) repeat ;
-   /* background: linear-gradient(rgba(255,123,100,0.8), rgba(255,255,255,0.2)) top left repeat-x, url("../assets/images/ditsy-pattern-36099903.jpg") repeat ;*/
-    background-color: salmon;
-    background-size: auto 7em, auto auto;
-
+.bkgnd-pattern1 {
+    background:  url(/assets/images/xs-patterns/dark_embroidery.png);
 }
 
 .bkgnd-patternCSS1 {
@@ -199,24 +187,10 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
 
 }
 
-.bkgnd-patternCSS2 {
-    background:
-    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-    background-color: #131313;
-    background-size: 20px 20px;
-}
-
-
-
 #map {
   display: block;
   height: 100%;
-  margin: 0 2%;
+
 }
 
 #mapDiv {
@@ -224,37 +198,58 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
   width: 100%;
 }
 
-@media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
-    display: block;
-  }
+
+/*-----------------------------------------------*/
+/*   MEDIA QUERIES FOR DEVICES     */
+/*-----------------------------------------------*/
+
+
+/* media query for --- bootstrap small devices ----- break point */
+@media only screen and (min-width: 768px) and (max-width: 991px)  {
+
+
+
 }
 
-/* Media queries to handle various device widths */
+
+/* media query for bootsrap medium desktops break point*/
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .biopic img {
+        border-radius: 45px 15px;
+    }
+
+}
+
+
+/* media query for --- bootstrap large devices ----- break point */
+@media only screen and (min-width: 1200px) {
+
+
+}
+
 
 /*
 @media only screen and (max-width: 750px) {
 
-}
-*/
-
-/*
-@media only screen and (min-width: 1024px) {
+  .biopic img {
+            border-radius: 45px 15px;
 
 }
 */
 
+/* Media queries to handle various device widths */
 
 /*
-@media only screen and (min-width: 750px) {
-
-     .biopic img {
-            border-radius: 90px 35px;
+@media only screen and (min-width: 768px) {
+      .biopic img {
+            border-radius: 90px 50px;
     }
-
-  .welcome-message {
-    display: none;
-  }
+    .gray {
+        background-color: aqua;
+    }
 }
 */
+
+
+

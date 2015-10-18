@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<head>
+   <meta charset=utf-8 />
+
+   <link rel="import" href="bower_components/polymer/polymer.html">
+</head>
+
+<script>
+  // register a new element called proto-element
+  Polymer({
+    is: "proto-element",
+    // add a callback to the element's prototype
+    ready: function() {
+      this.textContent = "I'm a proto-element. Check out my prototype!"
+    }
+  });
+</script>
+
+<html>
+    <body>
+
+        <dom-module id="picture-frame">
+          <template>
+            <!-- scoped CSS for this element -->
+            <style>
+              div {
+                display: inline-block;
+                background-color: yellowgreen;
+                border-radius: 4px;
+                padding: 8px;
+              }
+            </style>
+            <div>
+              <!-- any children are rendered here -->
+              <content></content>
+            </div>
+          </template>
+          <script>
+            Polymer({
+              is: "picture-frame",
+            });
+          </script>
+        </dom-module>
+
+         <dom-module id="my-button">
+                <template>
+                    <style>
+                        button {
+                            display: inline-block;
+                            background: #bada55;
+                            border: 1px solid #6ba4b8;
+                            border-radius: 0.3em;
+                            font-size: 1.4em;
+                            cursor: pointer;
+                        }
+                    </style>
+                    <button><content></content></button>
+                </template>
+                <script>
+                    Polymer({
+                      is: "my-button",
+                    });
+                </script>
+        </dom-module >
+
+        <dom-module id="contact-card">
+              <link rel="import" type="css" href="contact-card.css">
+              <template>
+                <content></content>
+                <iron-icon icon="star" hidden$="{{!starred}}"></iron-icon>
+              </template>
+              <script>
+                Polymer({
+                  is: 'contact-card',
+                  properties: {
+                    starred: Boolean
+                  }
+                });
+              </script>
+        </dom-module>
+
+        <dom-module id="friend-list">
+          <link rel="import" type="css" href="friend-list.css">
+          <template>
+            <firebase-collection data="{{data}}"
+                              location="https://users1.firebaseio.com/users">
+            </firebase-collection>
+            <template is="dom-repeat" items="{{data}}">
+              <contact-card starred="{{item.starred}}">
+                <img src="{{item.img}}">
+                <span>{{item.name}}</span>
+              </contact-card>
+            </template>
+          </template>
+          <script>
+            Polymer({
+              is: 'friend-list'
+            });
+          </script>
+        </dom-module>
+
+    </body>
+</html>

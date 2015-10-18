@@ -3,7 +3,8 @@
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
+
+var HTMLheaderName = '<div><h1 id="name" class="orange-text">%data%</h1></div>';
 var HTMLheaderRole = '<span>%data%</span>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
@@ -14,8 +15,7 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-/*var HTMLbioPic = '<images src="%data%" class="biopic">';*/
-var HTMLbioPic = '<figure class="biopic"><a href="#"><picture><source media="(min-width: 1200px)" srcset="%data%-medium_2x.jpg 2x, %data%-medium.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="%data%-medium.jpg 2x, %data%-small.jpg" /><source media="(min-width: 768px) and (max-width: 991px)" srcset="%data%-medium_2x.jpg 2x, %data%-medium.jpg" /><img class="img-rounded img-responsive" alt="karl longman" src="%data%-small.jpg"></picture></a><figcaption>© %name%</figcaption></figure>';
+var HTMLbioPic = '<figure class="biopic"><a href="#"><picture><source media="(min-width: 1200px)" srcset="%data%-medium_2x.jpg 2x, %data%-medium.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="%data%-medium.jpg 2x, %data%-small.jpg" /><source media="(min-width: 768px) and (max-width: 991px)" srcset="%data%-medium_2x.jpg 2x, %data%-medium.jpg" /><img class="img-responsive" alt="karl longman" src="%data%-small.jpg" width="50%" height="50%"></picture></a><figcaption>© %name%</figcaption></figure>';
 
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
@@ -48,7 +48,8 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+//var internationalizeButton = '<button>Internationalize</button>';
+
 var googleMap = '<div id="map"></div>';
 
 
@@ -111,7 +112,7 @@ function initializeMap() {
 
   /* 
   For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js. 
+  appended to #map-div in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#mapDiv'), mapOptions);
 
@@ -173,8 +174,7 @@ console.log(locations);
     });
 
     google.maps.event.addListener(marker, 'click', function() {
-       /* console.log("rssp");
-        console.log(this.getTitle());*/
+
     });
 
     // this is where the pin actually gets added to the map.

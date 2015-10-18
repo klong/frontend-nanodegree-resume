@@ -1,7 +1,5 @@
 
-/*
-BIO JSON OBJECT
-*/
+/*BIO OBJECT*/
 
 var bio = {
     "name" : "Karl Longman",
@@ -16,10 +14,11 @@ var bio = {
     "welcomeMsg" : "Oi, I Say it's me with a welcome message message en't",
     "skills" : ["Video Editing", "Interaction Design", "Art", "Visual effects design & editing"],
 
-    /*DISPLAY BIO*/
+/*DISPLAY BIO FUNCTION*/
 
     "display": function () {
         "use strict";
+
         //  format html name and role
         var formattedHTMLheaderName = HTMLheaderName.replace("%data%", bio.name);
         var formattedHTMLheaderRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -34,45 +33,48 @@ var bio = {
         var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-        // add bio entry to resume header
-        $("#header").prepend(formattedHTMLheaderRole).prepend(formattedHTMLheaderName);
-        $("#header").append(formattedWelcomeMsg);
-        $("#header").append(formattedBioPic);
+
+//$("#header").prepend(HTMLBioCard);
+//  ADD NAME & ROLE
+       $("#bio-card:last").prepend(formattedHTMLheaderRole).prepend(formattedHTMLheaderName);
+//  ADD WELCOME MESSAGE
+        $("#bio-card:last").append(formattedWelcomeMsg);
+//  ADD RESUME PICTURE
+      $("#bio-card:last").append(formattedBioPic);
 
         if (bio.skills.length > 0) {
 
-            // REPLACE with a loop *******  TODO    **********
-            $("#header").append(HTMLskillsStart);
+//  ADD SKILLS HEADING
+            $("#bio-card:last").append(HTMLskillsStart);
 
-            //  format html resume skills
-            var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-            $("#skills").append(formattedSkill);
-            var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-            $("#skills").append(formattedSkill);
-            var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-            $("#skills").append(formattedSkill);
-            var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-            $("#skills").append(formattedSkill);
+            for (var skill in bio.skills) {
+
+                //  format html skill(s)
+                var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+//  ADD SKILL(S)
+                $("#skills").append(formattedSkill);
+
+            }
 
         }
-         // ******* TODO    **********
-        //  add contacts to resume header
+
+//  ADD HEADER CONTACTS
         $("#topContacts").append(formattedMobile)
             .append(formattedEmail)
             .append(formattedGithub)
             .append(formattedLocation);
 
-        //  add contacts to resume footer
+//  ADD FOOTER CONTACTS
         $("#footerContacts").append(formattedMobile)
          .append(formattedEmail)
          .append(formattedGithub)
          .append(formattedLocation);
+
+
     }
 };
 
-/*
-WORK JSON OBJECT
-*/
+/*WORK OBJECT*/
 
 var work = {
     "jobs": [
@@ -119,6 +121,9 @@ var work = {
             "description" : "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will"
         }
     ],
+
+    /*DISPLAY WORK FUNCTION*/
+
     "display" : function () {
 
         for (var count in work.jobs)    {
@@ -131,7 +136,7 @@ var work = {
             var formattedJobLocation = HTMLworkLocation.replace("%data%", work.jobs[count].location);
             var formattedJobDescription = HTMLworkDescription.replace("%data%", work.jobs[count].description);
 
-            // add Employment entry to resume
+//  ADD EMPLOYMENT ENTRY
             $("#workExperience").append(HTMLworkStart);
             $(".work-entry:last").append(formattedEmployerTitle);
             $(".work-entry:last").append(formattedJobDates);
@@ -142,9 +147,7 @@ var work = {
     }
 };
 
-/*
-EDUCATION JSON OBJECT
-*/
+/*EDUCATION OBJECT*/
 
 var education = {
     "schools":  [
@@ -187,45 +190,48 @@ var education = {
             "url" : "http://www.udacity.com/course/ud804"
         }
     ] ,
+
+    /*DISPLAY EDUCATION FUNCTION*/
+
     "display" : function () {
 
-        // Education Schools-College-University
 		for(var school in education.schools) {
 
-            // html formatted data
+            // html formatted Education Schools-College-University
 			var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
 			var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 			var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 
-            // append schools data to resume
+//  ADD EDUCATION ENTRY
             $('#education').append(HTMLschoolStart);
             $('.education-entry:last').append(formattedSchool + formattedDegree);
             $('.education-entry:last').append(formattedDates);
 			$('.education-entry:last').append(formattedLocation);
 
 			for(var major in education.schools[school].majors) {
+                // html formatted Major(s)
 				var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+//  ADD EDUCATION MAJOR
 				$('.education-entry:last').append(formattedMajor);
 			}
 
         }
 
-        // Online Courses
+
         if (education.onlineCourses.length > 0) {
 
-            // add Online Class section to resume
             $('#education').append(HTMLonlineClasses);
 
                 for(var course in education.onlineCourses) {
 
-                    // format html for online course entry
+                    // format html online course entry
                     var formattedCourseTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
                     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
                     var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
                     var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 
-                    // add online course entry to resume
+// ADD ONLINE COURSE ENTRY
                     $('#education').append(HTMLschoolStart);
                     $('.education-entry:last').append(formattedCourseTitle + formattedOnlineSchool);
                     $('.education-entry:last').append(formattedDates);
@@ -237,7 +243,7 @@ var education = {
 };
 
 /*
-PROJECTS JSON OBJECT
+PROJECTS OBJECT
 */
 var projects = {
     "projects": [
@@ -261,17 +267,18 @@ var projects = {
             ]
         }
     ],
+
+    /*DISPLAY PROJECT FUNCTION*/
+
     "display" : function() {
 
         for (var project in projects.projects) {
-
+            // format html project
             var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
             var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
             var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-
+// ADD PROJECT ENTRY
             $("#projects").append(HTMLprojectStart);
-
-            // add project entry to resume
             $(".project-entry:last").append(formattedTitle);
             $(".project-entry:last").append(formattedDates);
             $(".project-entry:last").append(formattedDescription);
@@ -281,10 +288,10 @@ var projects = {
 
                 for (var image in projects.projects[project].images) {
 
-                    // format html for project image
+                    // format html project image
                     var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
 
-                    // add image to project entry
+// ADD PROJECT IMAGE(S)
                     $(".project-entry:last").append(formattedImage);
 
                 }
@@ -298,9 +305,9 @@ var projects = {
 
     bio.display();
     work.display();
-    projects.display();
+    /*projects.display();*/
     education.display();
-    // Google map
-    $("#mapDiv").append(googleMap);
 
+// ADD GOOGLE MAP
+    $("#map").append(googleMap);
 

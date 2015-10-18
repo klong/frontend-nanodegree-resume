@@ -15,49 +15,344 @@
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="js/helper.js"></script>
 
+     <!-- custom resume CSS. -->
+    <link href="css/portfolio.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <!-- Bootstrap CSS-->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-      <!-- resume CSS. -->
-    <link href="css/style.css" rel="stylesheet">
-
 
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- MAIN RESUME-->
+    <div id="main" class="container">
+            <!--BIOGRAPHICAL SECTION-->
+            <div class="row">
+                <div id="header" class="bkgnd-pattern1 clear-fix">
+                    <div id ="bio-card" class="col-xs-12 col-sm-6 col-md-4"></div>
+                    <div>
+                      <ul id="topContacts" class="flex-box"></ul>
+                    </div>
+<!--                   <div style="clear: both;"></div>-->
+                </div>
+            </div>
+            <!--WORK EXPERIENCE SECTION-->
+                <div id="workExperience" class="row gray">
+                    <h2>Work Experience</h2>
+                </div>
+            <!--PROJECTS SECTION-->
+                <div id="projects" class="row portfolio-background">
+                     <div class="row portfolio-topbar">
+                    <h1 class="portfolio-topbar-title">
+                        Udacity Front-End Web Developer Nanodegree <small>Projects</small>
+                    </h1>
+                </div>
+                      <!-- PROJECT 0 About me -->
+                            <article class="p0 project col-xs-12 col-sm-6 col-md-4" id="p0">
+                                <header>
+                                    <h2 class="project-title"><a href="#" data-toggle="collapse" data-target="#p0Section">P0&nbsp;<small>About me</small></a></h2>
+                                    <p>Create and edit simple HTML and CSS files.</p>
+                                </header>
+                                <section id="p0Section" class="project row collapse">
+                                   <div class="col-xs-6 col-md-4 col-lg-6  first-column">
+                                    <figure>
+                                        <a href="#">
+                                            <picture>
+                                                <source media="(min-width: 1200px)" srcset="assets/images/karl-2015-medium_2x.jpg 2x, assets/images/karl-2015-medium.jpg" />
+                                                <source media="(min-width: 992px) and (max-width: 1199px)" srcset="assets/images/karl-2015-medium.jpg 2x, assets/images/karl-2015-small.jpg" />
+                                                <source media="(min-width: 768px) and (max-width: 991px)" srcset="assets/images/karl-2015-medium_2x.jpg 2x, assets/images/karl-2015-medium.jpg" />
+                                                <img class="img-rounded img-responsive" alt="karl longman" src="assets/images/karl-2015-small.jpg">
+                                            </picture>
+                                        </a>
+                                        <figcaption>About me.</figcaption>
+                                    </figure>
+                                    <a href="#">Website</a>
+                                    </div>
+                                    <div class="col-xs-6 col-md-8 col-lg-6">
+                                       <div class="panel-group" id="P0Accordion" role="tablist" aria-multiselectable="true">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="P0headingOne">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#P0Accordion" href="#P0collapseOne" aria-expanded="false" aria-controls="P0collapseOne">
+                                                        Courses
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="P0collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P0headingOne">
+                                                    <div class="panel-body">
+                                                        <ul class="nav list-group">
+                                                            <li class="list-group-item">
+                                                                <a href="https://www.udacity.com/course/viewer#!/c-ud304-nd">Intro to HTML and CSS.</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="P0headingTwo">
+                                                    <h4 class="panel-title">
+                                                         <a  class="collapsed" role="button" data-toggle="collapse" data-parent="#P0Accordion" href="#P0collapseTwo" aria-expanded="false" aria-controls="P0collapseTwo">
+                                                          Learning Goals
+                                                         </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="P0collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P0headingTwo">
+                                                    <div class="panel-body">
+                                                         <p>Get acquainted with Brackets text editor. Create and edit simple HTML and CSS files to create an 'About me' webpage.</p>
+                                                    </div>
+                                                </div>
+                                          </div>
+                                              <div class="panel panel-default">
+                                                    <div class="panel-heading" role="tab" id="P0headingThree">
+                                                      <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#P0Accordion" href="#P0collapseThree" aria-expanded="false" aria-controls="P0collapseThree">
+                                                          Skills attained
+                                                        </a>
+                                                      </h4>
+                                                    </div>
+                                                    <div id="P0collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P0headingThree">
+                                                      <div class="panel-body">
+                                                         <p>Set up Brackets with plugins for HTML and CSS lint tools and W3C validation.</p>
+                                                    </div>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </article>
 
-         <!-- MAIN RESUME-->
-          <div id="main" class="row">
-            <!--    BIOGRAPHICAL SECTION-->
-            <div id="header" class="bkgnd-patternCSS1 center-content clear-fix">
-              <ul id="topContacts" class="flex-box"></ul>
-            </div>
-            <div style="clear: both;"></div>
-            <!--    WORK EXPERIENCE SECTION-->
-            <div id="workExperience" class="gray">
-              <h2>Work Experience</h2>
-            </div>
-            <!--    PROJECTS SECTION-->
-            <div id="projects">
-              <h2>Projects</h2>
-            </div>
-            <!--    EDUCATION-->
-            <div id="education" class="gray">
-              <h2>Education</h2>
-            </div>
-            <!--    MAP SECTION-->
-            <div id="mapDiv">
-              <h2>Where I've Lived and Worked</h2>
-            </div>
-            <!--    CONTACT FOOTER-->
-            <div id="lets-connect" class="bkgnd-patternCSS2">
-              <h2 class="center-text">Let's Connect</h2>
-              <ul id="footerContacts" class="flex-box footer-contacts">
-              </ul>
-            </div>
-          </div>
+    <!-- PROJECT 1 Build a Portfoilio Site-->
+                        <article class="p1 project col-xs-12 col-sm-6 col-md-4">
+                             <header>
+                                 <h2 class="project-title"><a href="#" data-toggle="collapse" data-target="#p1Section">P1&nbsp;<small>Build a Portfoilio Site</small></a></h2>
+                                <p>A Bootstrap responsive website.</p>
+                            </header>
+                            <!-- p1 section -->
+                            <section id="p1Section" class="project row collapse">
+                                <div class="col-xs-6 col-md-5  first-column">
+                                     <h3>Build a Portfoilio Site</h3>
+                                     <a href="#">Website</a>
+                                </div>
+                                <div class="col-xs-6 col-md-7">
+                                   <div class="panel-group" id="P1Accordion" role="tablist" aria-multiselectable="true">
+                                    <!-- p1 Courses -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="P1headingOne">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#P1Accordion" href="#P1collapseOne" aria-expanded="false" aria-controls="P1collapseOne">
+                                                    Courses
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="P1collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P1headingOne">
+                                                <div class="panel-body">
+                                                    <ul class="nav list-group">
+                                                        <li class="list-group-item"><a href="https://www.udacity.com/course/viewer#!/c-ud304-nd">Intro to HTML and CSS.</a></li>
+                                                        <li class="list-group-item"><a href="https://www.udacity.com/course/viewer#!/c-ud893-nd">Responsive Web Design.</a></li>
+                                                        <li class="list-group-item"><a href="https://www.udacity.com/course/viewer#!/c-ud882-nd">Responsive Images.</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- p1 Learning Goals -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="P1headingTwo">
+                                                <h4 class="panel-title">
+                                                     <a  class="collapsed" role="button" data-toggle="collapse" data-parent="#P1Accordion" href="#P1collapseTwo" aria-expanded="false" aria-controls="P1collapseTwo">
+                                                      Learning Goals
+                                                     </a>
+                                                </h4>
+                                            </div>
+                                            <div id="P1collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P1headingTwo">
+                                                <div class="panel-body">
+                                                     <p>Create a responsive Bootstrap Portfolio website.</p>
+                                                </div>
+                                            </div>
+                                      </div>
+                                        <!-- p1 Skills attained -->
+                                          <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="P1headingThree">
+                                                  <h4 class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#P1Accordion" href="#P1collapseThree" aria-expanded="false" aria-controls="P1collapseThree">
+                                                      Skills attained
+                                                    </a>
+                                                  </h4>
+                                                </div>
+                                                <div id="P1collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P1headingThree">
+                                                  <div class="panel-body">
+                                                     <p>Followed Udacity FEND - HTML and CSS code and style guides.</p>
+                                                     <p>Used Bootstrap Framework and Javascript components.</p>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </article>
+    <!-- PROJECT 2 Online Resume -->
+                        <article class="project p2 col-xs-12 col-sm-6 col-md-4">
+                            <header>
+                                <h2 class="project-title"><a href="#" data-toggle="collapse" data-target="#p2Section">P2 <small>Online Resume</small></a></h2>
+                                <p>Javascript Challenge</p>
+                            </header>
+                                <!-- p2 section -->
+                              <section id="p2Section" class="project row collapse">
+                                 <div class="col-xs-6 col-md-5  first-column">
+                                     <h3>Build a Portfoilio Site</h3>
+                                     <a href="#">Website</a>
+                                </div>
+                                <div class="col-xs-6 col-md-7">
+                                   <div class="panel-group" id="P2Accordion" role="tablist" aria-multiselectable="true">
+                                    <!-- p2 Courses -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="P2headingOne">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#P2Accordion" href="#P2collapseOne" aria-expanded="false" aria-controls="P2collapseOne">
+                                                    Courses
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="P2collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P2headingOne">
+                                                <div class="panel-body">
+                                                   <ul class="nav list-group">
+                                                        <li class="list-group-item"><a href="https://www.udacity.com/course/viewer#!/c-ud804-nd">JavaScript Basics.</a></li>
+                                                        <li  class="list-group-item"><a href="https://www.udacity.com/course/viewer#!/c-ud245-nd">Intro to JQuery.</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <!-- p2 Learning Goals -->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="P2headingTwo">
+                                                <h4 class="panel-title">
+                                                     <a  class="collapsed" role="button" data-toggle="collapse" data-parent="#P2Accordion" href="#P2collapseTwo" aria-expanded="false" aria-controls="P2collapseTwo">
+                                                      Learning Goals
+                                                     </a>
+                                                </h4>
+                                            </div>
+                                            <div id="P2collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P2headingTwo">
+                                                <div class="panel-body">
+                                                     <p>Use JavaScript to turn static web pages into dynamic applications.</p>
+                                                </div>
+                                            </div>
+                                      </div>
+                                     <!-- p2 Skills attained -->
+                                          <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="P2headingThree">
+                                                      <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#P2Accordion" href="#P2collapseThree" aria-expanded="false" aria-controls="P2collapseThree">
+                                                          Skills attained
+                                                        </a>
+                                                      </h4>
+                                                </div>
+                                                <div id="P2collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P2headingThree">
+                                                  <div class="panel-body">
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </article>
+
+<!--  PROJECT 3  Classic Arcade Game Clone -->
+            <article class="project p3 col-xs-12 col-sm-6 col-md-4"> <!-- project banner sizes at device sizes  -->
+                <header>
+                    <h2 class="project-title"><a href="#" data-toggle="collapse" data-target="#p3Section">P3 <small> Classic Arcade Game Clone</small></a></h2>
+                    <p>Object Oriented JavaScript</p>
+                </header>
+                <!-- p3 section -->
+                 <section id="p3Section" class="project row collapse">
+                       <div class="col-xs-6 col-md-5 first-column">
+                             <h3>HTML5 Canvas Game</h3>
+                             <a href="#">
+                                    <figure>
+                                       <picture>
+                                            <source media="(min-width: 1200px)" srcset="assets/images/Frogger_game_arcade-medium_2x.png 2x, assets/images/Frogger_game_arcade-medium.png" />
+                                            <source media="(min-width: 992px) and (max-width: 1199px)" srcset="assets/images/assets/img/Frogger_game_arcade-medium.png 2x, assets/images/Frogger_game_arcade-small.png" />
+                                            <source media="(min-width: 768px) and (max-width: 991px)" srcset="assets/images/karl-2015-medium_2x.png 2x, assets/images/Frogger_game_arcade-medium.png" />
+                                            <img class="img-rounded img-responsive" alt="Frogger Arcade Game" src="assets/images/Frogger_game_arcade-small.png" />
+                                        </picture>
+                                        <figcaption>Frogger</figcaption>
+                                    </figure>
+                               </a>
+                                <a href="#">Website</a>
+                         </div>
+                         <!-- p3 Courses panel -->
+                        <div class="col-xs-6 col-md-7">
+                           <div class="panel-group" id="P3Accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="P3headingOne">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#P3Accordion" href="#P3collapseOne" aria-expanded="false" aria-controls="P3collapseOne">
+                                            Courses
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="P3collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P3headingOne">
+                                        <div class="panel-body">
+                                            <ul class="nav list-group">
+                                                <li class="list-group-item"><a href="https://www.udacity.com/course/viewer#!/c-ud015-nd">Object-Orientated JavaScript.</a></li>
+                                                <li class="list-group-item"><a href="https://www.udacity.com/course/viewer#!/c-ud292-nd">HTML5 Canvas.</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- p3 Skills Learning Goals panel -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="P3headingTwo">
+                                        <h4 class="panel-title">
+                                             <a  class="collapsed" role="button" data-toggle="collapse" data-parent="#P3Accordion" href="#P3collapseTwo" aria-expanded="false" aria-controls="P3collapseTwo">
+                                              Learning Goals
+                                             </a>
+                                        </h4>
+                                    </div>
+                                    <div id="P3collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P3headingTwo">
+                                        <div class="panel-body">
+                                             <p>JavaScript game app using HTML5 Canvas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- p3 Skills attained panel -->
+                                <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="P3headingThree">
+                                              <h4 class="panel-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#P3Accordion" href="#P3collapseThree" aria-expanded="false" aria-controls="P3collapseThree">
+                                                  Skills attained
+                                                </a>
+                                              </h4>
+                                        </div>
+                                        <div id="P3collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="P3headingThree">
+                                          <div class="panel-body">
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </article>
     </div>
+<!--end of PROJECTS-->
+ <!--EDUCATION-->
+                            <div id="education" class="row gray">
+                              <h2>Education</h2>
+                            </div>
+<!--MAP SECTION-->
+                            <div id="map" class="row">
+                              <h2>Where I've Lived and Worked</h2>
+                                <div id="mapDiv"></div>
+                            </div>
+<!--CONTACT FOOTER-->
+                            <div id="lets-connect" class="row lets-connect bkgnd-pattern1" >
+                              <h2 class="center-text ">Let's Connect</h2>
+                              <ul id="footerContacts" class="flex-box ">
+                              </ul>
+                            </div>
+                    </div>
+
+    </div>
+
 
      <!--Resume javascript-->
 
@@ -74,9 +369,9 @@
                 if(document.getElementsByClassName('work-entry').length === 0) {
                   document.getElementById('workExperience').style.backgroundColor = "black";
                 }
-                if(document.getElementsByClassName('project-entry').length === 0) {
+               /* if(document.getElementsByClassName('project-entry').length === 0) {
                   document.getElementById('projects').style.backgroundColor = "black";
-                }
+                }*/
                 if(document.getElementsByClassName('education-entry').length === 0) {
                   document.getElementById('education').style.backgroundColor = "black";
                 }
@@ -84,9 +379,8 @@
                   document.getElementById('lets-connect').style.backgroundColor = "black";
                 }
                 if(document.getElementById('map') === null) {
-                  document.getElementById('mapDiv').style.backgroundColor = "black";
+                    document.getElementById('mapDiv').style.backgroundColor = "black";
                 }
-
     </script>
     </body>
 </html>
