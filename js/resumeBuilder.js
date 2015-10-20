@@ -248,29 +248,124 @@ PROJECTS OBJECT
 var projects = {
     "projects": [
         {
-        "title": "Sample Project 1",
+        "ProjectID": "p0",
+        "title": "About me",
+        "heading": "Create and edit simple HTML and CSS files.",
         "dates": 2015,
-        "description":  "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will",
+        "description":  "",
+        "websiteURL": "http://www.google.com",
         "images":   [
-            "assets/images/197x148.gif",
-            "assets/images/197x148.gif",
-            "assets/images/197x148.gif",
-            "assets/images/197x148.gif"
+            "assets/images/karl-2015.jpg",
+            "assets/images/Frogger_game_arcade.png"
+            ],
+        "projectCourses": [
+                    {
+                        "name": "Intro to HTML and CSS.",
+                        "url": "https://www.udacity.com/course/viewer#!/c-ud304-nd"
+                     }
+            ],
+        "learningGoals": [
+                "Get acquainted with Brackets text editor.",
+                "Create and edit simple HTML and CSS files to create an 'About me' webpage."
+            ],
+        "skillsAttained": [
+                "Set up Brackets with plugins for HTML and CSS lint tools and W3C validation."
             ]
         },
         {
-        "title": "Sample Project 2",
-        "dates": 2013,
-        "description":  "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will",
+        "ProjectID": "p1",
+        "title": "Build a Portfolio Site",
+        "heading": "A Bootstrap responsive website.",
+        "dates": 2015,
+        "description":  "Build a Portfolio Site.",
+        "websiteURL": "http://www.google.com",
+        "images":   [],
+        "projectCourses": [
+
+                {
+                    "name": "Intro to HTML and CSS.",
+                    "url": "https://www.udacity.com/course/viewer#!/c-ud304-nd"
+                },
+                {
+                    "name": "Responsive Web Design.",
+                    "url": "https://www.udacity.com/course/viewer#!/c-ud893-nd"
+                },
+                {
+                    "name": "Responsive Images.",
+                    "url": "https://www.udacity.com/course/viewer#!/c-ud882-nd"
+                }
+
+        ],
+        "learningGoals": [
+            "Create a responsive Bootstrap Portfolio website."
+        ],
+        "skillsAttained": [
+            "Followed Udacity FEND - HTML and CSS code and style guides.",
+            "Used Bootstrap Framework and Javascript components."
+        ]
+        },
+        {
+        "ProjectID": "p2",
+        "title": "Online Resume",
+        "heading": "Javascript Challenge.",
+        "dates": 2015,
+        "description":  "Build a JSON data resume.",
+        "websiteURL": "http://www.google.com",
+        "images":   [],
+        "projectCourses": [
+
+                {
+                    name: "JavaScript Basics.",
+                    "url": "https://www.udacity.com/course/viewer#!/c-ud804-nd"
+                },
+                 {
+                    name: "Intro to JQuery.",
+                    "url": "https://www.udacity.com/course/viewer#!/c-ud245-nd"
+                }
+
+            ],
+        "learningGoals": [
+            "Use JavaScript to turn static web pages into dynamic applications."
+        ],
+        "skillsAttained": [
+            "Creation and accessing of basic JSON formatted data.",
+            "Writing/debugging Javascript functions as external scripts and page scripts.",
+            "Gained experience of JQuery for DOM element manipulation."
+        ]
+        },
+        {
+        "ProjectID": "p3",
+        "title": "Classic Arcade Game Clone",
+        "heading": "Object Orientated Javascript.",
+        "dates": 2015,
+        "description":  "HTML5 Canvas Game.",
+        "websiteURL": "http://www.google.com",
         "images":   [
-            "assets/images/197x148.gif"
-            ]
+            "assets/images/Frogger_game_arcade.png"
+            ],
+        "projectCourses": [
+
+                {
+                    name: "Object-Orientated JavaScript.",
+                    "url": "https://www.udacity.com/course/viewer#!/c-ud015-nd"
+                },
+                {
+                    name: "HTML5 Canvas.",
+                    "url": "https://www.udacity.com/course/viewer#!/c-ud292-nd"
+                }
+
+        ],
+        "learningGoals": [
+            "JavaScript game app using HTML5 Canvas."
+        ],
+        "skillsAttained": []
         }
+
     ],
 
     /*DISPLAY PROJECT FUNCTION*/
 
-    "display" : function() {
+    "display": function() {
 
         for (var project in projects.projects) {
             // format html project
@@ -295,19 +390,149 @@ var projects = {
                     $(".project-entry:last").append(formattedImage);
 
                 }
+
             }
+        }
+    },
+
+/*DISPLAY MY PROJECT FUNCTION*/
+
+    "myDisplay": function() {
+
+         for (var myproject in projects.projects) {
+             var myprojectID = projects.projects[myproject].ProjectID;
+
+            // ARTICLE HTML
+            var myformattedProjectStart = myHTMLprojectStart.replace(/%id%/g, myprojectID);
+            // HEADER HTML
+            var myformattedHeader = myHTMLprojectHeader
+                .replace(/%id%/g, myprojectID)
+                .replace(/%heading%/g, projects.projects[myproject].heading)
+                .replace(/%title%/g, projects.projects[myproject].title);
+            // PROJECT COLLAPSE SECTION HTML
+            var myformattedCollapseSection = myHTMLprojectCollapseSection.replace(/%id%/g, myprojectID);
+            // PROJECT COLUMN 1 HTML
+            var myformattedFirstColumn = myHTMLprojectFirstColumn.replace(/%id%/g, myprojectID);
+            var myformattedWebsite = myHTMLprojectWebsite.replace("%data%", projects.projects[myproject].websiteURL);
+            // PROJECT COLUMN 2 HTML
+            var myformattedSecondColumn = myHTMLprojectSecondColumn.replace(/%id%/g, myprojectID);
+            var myformattedprojectAccordion = myHTMLprojectAccordion.replace(/%id%/g, myprojectID);
+
+            // FOOTER HTML
+            var myformattedFooter = myHTMLprojectFooter.replace(/%data%/g, projects.projects[myproject].dates);
+
+
+
+// ADD PROJECT(S) TO RESUME
+            $("#my-projects").append(myformattedProjectStart);
+
+            $("#" + myprojectID)
+                        .append(myformattedHeader)
+                        .append(myformattedCollapseSection)
+                        .append(myformattedFooter);
+
+            // FIRST COLUMN
+            $("#" + myprojectID + "Section").append(myformattedFirstColumn);
+            // SECOND COLUMN
+            $("#" + myprojectID + "Section").append(myformattedSecondColumn);
+
+            // IMAGE(S) HTML
+            if (projects.projects[myproject].images.length > 0) {
+
+                var projectArrayRef = projects.projects[myproject].images;
+
+                for (var image in projectArrayRef) {
+                    var imageFileRef = projectArrayRef[image].slice(0, -4);
+                    var imageType = projectArrayRef[image].slice(-4); //get the last 4 chars of image url for the img file extension
+
+                    // format html project image(s)
+                    var formattedImage = myHTMLprojectImage
+                        .replace(/%imageName%/g, imageFileRef)
+                        .replace(/%ImgExtType%/g, imageType)
+                        .replace(/%name%/g, projects.projects[myproject].title);
+
+                    // ADD IMAGE(S)
+                    $("#" + myprojectID + "FirstColumn:last").append(formattedImage);
+
+                }
+
+            }
+
+            // ADD WEBSITE
+            $("#" + myprojectID + "FirstColumn:last").append(myformattedWebsite);
+
+// SECOND COLUMN
+
+             // ADD PROJECT ACCORDION
+
+            $("#" + myprojectID + "SecondColumn:last").append(myformattedprojectAccordion);
+
+            // PROJECT ACCORDION COURSE(S)
+
+            if (projects.projects[myproject].projectCourses.length > 0) {
+
+                var AccordionCourseArrayRef = projects.projects[myproject].projectCourses;
+
+                for (var course in AccordionCourseArrayRef) {
+
+                    // PROJECT ACCORDION COURSE HTML
+                    var formattedProjectCourseEntry = myHTMLProjectAccordionListEntry
+                                                                                    .replace("%projectCourse%", AccordionCourseArrayRef[course].name)
+                                                                                    .replace("%courseURL%", AccordionCourseArrayRef[course].url);
+
+                    // ADD PROJECT ACCORDION COURSE
+
+                    $("#" + myprojectID + "CourseList:last").append(formattedProjectCourseEntry);
+                }
+            };
+
+            // PROJECT ACCORDION GOAL(S)
+
+            if (projects.projects[myproject].learningGoals.length > 0) {
+
+                var AccordionGoalsArrayRef = projects.projects[myproject].learningGoals;
+
+                for (var goal in AccordionGoalsArrayRef) {
+
+                    // PROJECT ACCORDION GOAL HTML
+                    var formattedProjectGoalEntry = myHTMLProjectAccordionText.replace("%data%", AccordionGoalsArrayRef[goal]);
+
+                    // ADD PROJECT ACCORDION GOAL
+                    $("#" + myprojectID + "LearningGoalList:last").append(formattedProjectGoalEntry);
+
+                }
+
+            };
+
+            // PROJECT ACCORDION SKILL(S) ATTAINED
+
+            if (projects.projects[myproject].skillsAttained.length > 0) {
+
+                var AccordionSkillsArrayRef = projects.projects[myproject].skillsAttained;
+
+                for (var skill in AccordionSkillsArrayRef) {
+
+                    // PROJECT ACCORDION GOAL HTML
+                    var formattedProjectSkillEntry = myHTMLProjectAccordionText.replace("%data%", AccordionSkillsArrayRef[skill]);
+
+                    // ADD PROJECT ACCORDION GOAL
+                    $("#" + myprojectID + "SkillAttainedList:last").append(formattedProjectSkillEntry);
+
+                }
+
+            };
         }
     }
 };
+
 
 
 /*BUILD THE RESUME PAGE*/
 
     bio.display();
     work.display();
-    /*projects.display();*/
+    projects.myDisplay();
     education.display();
-
-// ADD GOOGLE MAP
+    // ADD GOOGLE MAP
     $("#map").append(googleMap);
 
