@@ -4,9 +4,8 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 /*BIO CARD HELPER HTML*/
-//  name & role
-var HTMLheaderName = '<div><h1 id="name" class="orange-text">%data%</h1></div>';
-var HTMLheaderRole = '<span>%data%</span>';
+//  name & role HTML
+var HTMLheaderNameRole = '<div class="resume-heading"><h1 id="name">%name%</h1><br><span class="small" id="roleTitle">%role%</span></div>';
 //  contacts
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -16,32 +15,32 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 //  bio picture
-var HTMLbioPic = '<figure class="biopic"><a href="#"><picture><source media="(min-width: 1200px)" srcset="%data%-medium_2x.jpg 2x, %data%-medium.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="%data%-medium.jpg 2x, %data%-small.jpg" /><source media="(min-width: 768px) and (max-width: 991px)" srcset="%data%-medium_2x.jpg 2x, %data%-medium.jpg" /><img class="img-responsive" alt="karl longman" src="%data%-small.jpg" width="50%" height="50%"></picture></a><figcaption>© %name%</figcaption></figure>';
-//  welcome message
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLbioPic = '<figure class="biopic"><a href="#"><picture><source media="(min-width: 1200px)" srcset="%data%-medium_2x.jpg 2x, %data%-medium.jpg" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="%data%-medium.jpg 2x, %data%-small.jpg" /><source media="(min-width: 768px) and (max-width: 991px)" srcset="%data%-medium_2x.jpg 2x, %data%-medium.jpg" /><img class="img-responsive" alt="%name%" src="%data%-small.jpg" width="50%" height="50%"></picture></a></figure>';
+//  welcome message HTML
+var HTMLwelcomeMsg = '<div class="welcome-message">%data%</div>';
 
 /*SKILLS HELPER HTML*/
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li class="flex-item skill-list-item"><span>%data%</span></li>';
 
 /*WORK HELPER HTML*/
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
+var HTMLworkEmployer = '<a href="#">%data%</a>';
+var HTMLworkTitle = ' <div class="job-title">%data%</div>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescription = '<p class="job-description">%data%</p>';
 
 /*PROJECT HELPER HTML*/
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a href="#"><h4>%data%</h4></a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDescription = '<p>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 /*MY PROJECT HELPER HTML*/
 
-var myHTMLprojectStart = '<article class="%id% project col-xs-12 col-sm-6 col-md-4" id="%id%"></article>';
+var myHTMLprojectStart = '<article class="%id% project col-xs-12 col-md-4" id="%id%"></article>';
 
 var myHTMLprojectHeader = '<header><h2 class="project-title"><a href="#" data-toggle="collapse" data-target="#%id%Section">%id%&nbsp;<small>%title%</small></a></h2><p>%heading%</p></header>';
 var myHTMLprojectCollapseSection = ' <section id="%id%Section" class="project row collapse"></section>';
@@ -67,19 +66,22 @@ var myHTMLprojectDates = '<span class="date-text">%data%</span>';
 var myHTMLprojectCourse = '';
 
 /*EDUCATION HELPER HTML*/
-    //  schools
+
+ //  schools
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolDegree = ' - %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
-    //  online courses
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
+var HTMLschoolMajor = '<div class="major"><em>Major: %data%</em></div>';
+
+//  online courses
+var HTMLOnlineStart = '<div class="education-entry online-school-entry"></div>';
+var HTMLonlineClasses = '<span><h3 class="online-course">Online Classes</h3></span>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<a href="#">%data%</a>';
 
 //var internationalizeButton = '<button>Internationalize</button>';
 

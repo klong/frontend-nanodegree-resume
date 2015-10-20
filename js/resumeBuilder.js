@@ -3,16 +3,16 @@
 
 var bio = {
     "name" : "Karl Longman",
-    "role" : "Web Developer",
+    "role" : "Front-end Web Developer",
     "contacts" : {
-        "mobile" : "022 32312 231",
+        "mobile" : "00 0000 0000",
         "email" : "karl_longman@hotmail.com",
         "github" : "klong",
-        "location" : "Bristol"
+        "location" : "Bristol, UK"
     },
     "biopic" : "assets/images/karl-2015",
-    "welcomeMsg" : "Oi, I Say it's me with a welcome message message en't",
-    "skills" : ["Video Editing", "Interaction Design", "Art", "Visual effects design & editing"],
+    "welcomeMsg" : "I love to learn new technologies and workflows.",
+    "skills" : ["Interaction Design", "post production",  "Art", "Visual effect design & editing" ],
 
 /*DISPLAY BIO FUNCTION*/
 
@@ -20,11 +20,13 @@ var bio = {
         "use strict";
 
         //  format html name and role
-        var formattedHTMLheaderName = HTMLheaderName.replace("%data%", bio.name);
-        var formattedHTMLheaderRole = HTMLheaderRole.replace("%data%", bio.role);
+        var formattedHTMLheaderNameRole = HTMLheaderNameRole
+                                                                    .replace("%name%", bio.name)
+                                                                    .replace("%role%", bio.role);
 
-        // formatt html picture and welcome message
+        // formatt html bio picture
         var formattedBioPic = HTMLbioPic.replace(/%data%/g, bio.biopic).replace("%name%", bio.name);
+         // formatt html Welcome message
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 
          //  format html top  & footer contacts
@@ -34,13 +36,10 @@ var bio = {
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 
-//$("#header").prepend(HTMLBioCard);
 //  ADD NAME & ROLE
-       $("#bio-card:last").prepend(formattedHTMLheaderRole).prepend(formattedHTMLheaderName);
+        $("#bio-card:last").append(formattedHTMLheaderNameRole);
 //  ADD WELCOME MESSAGE
         $("#bio-card:last").append(formattedWelcomeMsg);
-//  ADD RESUME PICTURE
-      $("#bio-card:last").append(formattedBioPic);
 
         if (bio.skills.length > 0) {
 
@@ -58,18 +57,24 @@ var bio = {
 
         }
 
+//  ADD RESUME BIO PICTURE
+
+        $("#bioGallery").append(formattedBioPic);
+
+
 //  ADD HEADER CONTACTS
+
         $("#topContacts").append(formattedMobile)
-            .append(formattedEmail)
-            .append(formattedGithub)
-            .append(formattedLocation);
+                .append(formattedEmail)
+                .append(formattedGithub)
+                .append(formattedLocation);
 
 //  ADD FOOTER CONTACTS
-        $("#footerContacts").append(formattedMobile)
-         .append(formattedEmail)
-         .append(formattedGithub)
-         .append(formattedLocation);
 
+        $("#footerContacts").append(formattedMobile)
+                .append(formattedEmail)
+                .append(formattedGithub)
+                .append(formattedLocation);
 
     }
 };
@@ -79,46 +84,67 @@ var bio = {
 var work = {
     "jobs": [
         {
-            "jobTitle" : "Render Editor",
-            "employer" : "Ludorum",
-            "years" : 3,
+            "jobTitle" : "Freelance editor and edit assistant.",
+            "employer" : "Ludorum plc.",
+            "years" : "2010 – 2015",
             "location" : "Bristol",
-            "description" : "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will."
+            "description" : "animated children's television series."
         },
         {
-            "jobTitle" : "Animatic Editor",
-            "employer" : "Aardman",
-            "years" : 0.3,
+            "jobTitle" : "Freelance editor and edit assistant.",
+            "employer" : "Woodlore, BBC, Calliope Media, OnSight, Wessex Water plc.",
+            "years" : "2008 – 2010",
             "location" : "Bristol",
-            "description" : "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will"
+            "description" : "Freelance video editor"
         },
         {
-            "jobTitle" : "Edit Assistant",
+            "jobTitle" : "Video & editorial technical support",
+            "employer" : "Quad Logic Systems",
+            "years" : "2007 - 2009",
+            "location" : "Bristol",
+            "description" : "Video & editorial technical support & installation."
+        },
+        {
+            "jobTitle" : "Offline Storyboard Editor",
+            "employer" : "Aardman Animations",
+            "years" : "Feb – Mar. 2007",
+            "location" : "Bristol",
+            "description" : "Storyboard editing of childrens animated series."
+        },
+        {
+            "jobTitle" : "Avid Support & documentary edit assistant.",
             "employer" : "Splice",
-            "years" : 3,
+            "years" : "2003 – 2007",
             "location" : "Bristol",
-            "description" : "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will"
+            "description" : "Online Edit assistant"
         },
         {
-            "jobTitle" : "Interaction Designer",
+            "jobTitle" : "Senior Interaction Designer",
             "employer" : "Cooper Interaction Design",
-            "years" : "1998 - 18 months",
+            "years" : "2000 – 2001",
             "location" : "Palo Alto",
-            "description" : "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will"
+            "description" : "consultant interaction designer"
         },
         {
-            "jobTitle" : "CD-ROM Designer",
-            "employer" : "Lego",
-            "years" : 1.5,
+            "jobTitle" : "Senior Multimedia Designer",
+            "employer" : "Lego A/S",
+            "years" : "1998 – 1999",
             "location" : "Billund, Denmark",
-            "description" : "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will"
+            "description" : "Design for Technic CD-ROM"
         },
         {
-            "jobTitle" : "CD-ROM Designer",
-            "employer" : "Attica",
-            "years" : "1990 - 1993",
+            "jobTitle" : "Freelance Multimedia Designer",
+            "employer" : "CompuServe, Helicon Publishing, AA Publishing",
+            "years" : "1995 – 1997",
             "location" : "Oxford, UK",
-            "description" : "website. Your code will add information to each of the sections of the resume below. You can pretty easily figure out what each section will"
+            "description" : "Freelance multimedia designer"
+        },
+        {
+            "jobTitle" : "Multimedia Designer",
+            "employer" : "Attica",
+            "years" : "1994 –1996",
+            "location" : "Oxford, UK",
+            "description" : "interface designer on Multimedia CD-ROM's"
         }
     ],
 
@@ -151,43 +177,50 @@ var work = {
 
 var education = {
     "schools":  [
+
          {
-            "name" : "Leeds MU University",
+            "name" : "Northern Film School, Leeds Metropolitan University",
             "location" : "Leeds",
-            "degree" : "PgDip/MA",
-            "majors" : ["fiction film"],
-            "dates" : 2001,
-            "url" : "http://"
+            "degree" : "MA",
+            "majors" : ["Moving Image Production"],
+            "dates" : "2001 – 2003",
+            "url" : "#"
         },
         {
             "name" : "Coventry University",
             "location" : "Coventry",
-            "degree" : "PgDip/MA",
-            "majors" : ["Computer Art"],
-            "dates" : 1993,
-            "url" : "http://"
+            "degree" : "MA",
+            "majors" : ["Electronic Graphics"],
+            "dates" : "1991 – 1993",
+            "url" : "#"
         },
         {
-            "name" : "Goldsmiths College",
-            "location" : "New Cross, London",
-            "degree" : "BA honors",
-            "majors" : ["Fine Art"],
-            "dates" : 1989,
-            "url" : "http://www.goldsmithscolledge.co.uk"
+            "name" : "Goldsmiths Art College",
+            "location" : "London",
+            "degree" : "BA (Hons)",
+            "majors" : ["Visual Art"],
+            "dates" : "1986 - 1989",
+            "url" : "#"
         }
     ] ,
     "onlineCourses": [
         {
             "title" : "Mathematics",
-            "school" : "Open University",
-            "dates" : 2013,
-            "url" : "http://www.openuniversity.ac.uk"
+            "school" : "Open University Courses",
+            "dates" : "2013",
+            "url" : "#"
         },
         {
             "title" : "Javascript Basics",
             "school" : "Udacity",
-            "dates" : 2015,
+            "dates" : "2015",
             "url" : "http://www.udacity.com/course/ud804"
+        },
+         {
+            "title" : "Computers, Commerce & Industry",
+            "school" : "Open University Software Engineering Module",
+            "dates" : "1998 – 1999" ,
+            "url" : "#"
         }
     ] ,
 
@@ -204,6 +237,7 @@ var education = {
 			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 
 //  ADD EDUCATION ENTRY
+
             $('#education').append(HTMLschoolStart);
             $('.education-entry:last').append(formattedSchool + formattedDegree);
             $('.education-entry:last').append(formattedDates);
@@ -212,6 +246,7 @@ var education = {
 			for(var major in education.schools[school].majors) {
                 // html formatted Major(s)
 				var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+
 //  ADD EDUCATION MAJOR
 				$('.education-entry:last').append(formattedMajor);
 			}
@@ -232,19 +267,19 @@ var education = {
                     var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 
 // ADD ONLINE COURSE ENTRY
-                    $('#education').append(HTMLschoolStart);
-                    $('.education-entry:last').append(formattedCourseTitle + formattedOnlineSchool);
-                    $('.education-entry:last').append(formattedDates);
-                    $('.education-entry:last').append(formattedOnlineURL);
+
+                    $('#education').append(HTMLOnlineStart);
+                    $('.online-school-entry:last').append(formattedCourseTitle + formattedOnlineSchool);
+                    $('.online-school-entry:last').append(formattedDates);
+//                    $('.education-entry:last').append(formattedOnlineURL);
 
                 }
         }
     }
 };
 
-/*
-PROJECTS OBJECT
-*/
+/*  PROJECTS OBJECT */
+
 var projects = {
     "projects": [
         {
@@ -255,8 +290,7 @@ var projects = {
         "description":  "",
         "websiteURL": "http://www.google.com",
         "images":   [
-            "assets/images/karl-2015.jpg",
-            "assets/images/Frogger_game_arcade.png"
+            "assets/images/karl-2015.jpg"
             ],
         "projectCourses": [
                     {
@@ -341,7 +375,8 @@ var projects = {
         "description":  "HTML5 Canvas Game.",
         "websiteURL": "http://www.google.com",
         "images":   [
-            "assets/images/Frogger_game_arcade.png"
+            "assets/images/Frogger_game_arcade.png",
+            "assets/images/Atari2600_frogger.jpg"
             ],
         "projectCourses": [
 
@@ -363,7 +398,7 @@ var projects = {
 
     ],
 
-    /*DISPLAY PROJECT FUNCTION*/
+/*DISPLAY PROJECT FUNCTION*/
 
     "display": function() {
 
@@ -423,7 +458,7 @@ var projects = {
 
 
 
-// ADD PROJECT(S) TO RESUME
+// ADD MY PROJECT(S) TO RESUME
             $("#my-projects").append(myformattedProjectStart);
 
             $("#" + myprojectID)
@@ -463,7 +498,7 @@ var projects = {
 
 // SECOND COLUMN
 
-             // ADD PROJECT ACCORDION
+             // ADD MY PROJECT ACCORDION
 
             $("#" + myprojectID + "SecondColumn:last").append(myformattedprojectAccordion);
 

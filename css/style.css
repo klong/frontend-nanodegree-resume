@@ -1,3 +1,4 @@
+
 body,
 div,
 ul,
@@ -14,18 +15,105 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+p {
+
+    margin-left: 1em;
+
+}
+
+
+.bio-card {
+
+    float: right;
+    padding: 1.8em 1.8em 1em 1.8em;
+    margin: 0;
+    width: 80%;
+
+}
+
+.bio-gallery {
+
+    float: left;
+    width: 20%;
+
+}
+
+.biopic {
+
+    margin: 1.5em;
+
+}
+
+.biopic img {
+
+    border-radius: 50px 15px;
+    float: right;
+    width: auto;
+    margin-bottom: 2em;
+    padding: 0;
+
+}
+
+
+figure.biopic {
+
+    width: auto;
+
+}
+
+picture {
+
+
+    background-color: yellow;
+
+}
+
 .clear-fix {
   overflow: auto;
 }
 
 .container {
-    padding: 2em 0px 0px 0px;
+
+    padding: 0;
+
+}
+
+.date-text {
+
+    margin-right: 1em;
+}
+
+.resume-heading {
+
+    font-size: 1.3em;
+    text-align: left;
+
+}
+
+.resume-heading .small {
+
+        font-size: 1.5em;
+        padding-left: 0;
+
 }
 
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 2em 1em;
+
+    font-weight: 500;
+    font-size: 1.2em;
+    margin: 0.3em 1em 0.3em 1em;
+    padding: 0.5em 2em 0.5em 2em;
+    background-color: white;
+    border-radius: 0.5em;
+
+}
+
+.online-school-entry {
+
+    padding: 1.5em 0 2em 2em;
+
 }
 
 h1 {
@@ -46,16 +134,34 @@ h2 {
 h3 {
     font-style: italic;
     font-size: 0.9em;
-    color: gray;
     line-height: 1em;
-    padding: 0.5em 1em 0.5em 1em;
+    padding: 0.5em 0.5em;
 }
 
 h4 {
   font-weight: bold;
   font-size: 0.7em;
   color: #4a4a4a;
-  line-height: 0.8em;
+  line-height: 1em;
+}
+
+.online-course {
+
+    font-size: 1.6em;
+    margin: 0 0 0 1em;
+
+}
+
+.job-description {
+
+    font-weight: 400;
+
+}
+
+.job-title {
+
+    margin-bottom: 0.5em;
+
 }
 
 .date-text {
@@ -76,9 +182,11 @@ h4 {
 }
 
 p {
+
   font-size: 1em;
   color: #333;
   line-height: 1.4em;
+
 }
 
 a {
@@ -89,15 +197,21 @@ a {
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 1.2em;
-  color: whitesmoke;
-  line-height: 1.3em;
+
+    color: wheat;
+    font-style: italic;
+    font-size: 1.5em;
+    padding: 1em 0 0.5em 0;
+
 }
 
 #skills-h3 {
-  color: deepskyblue;
-  display: none;
+
+    color: ghostwhite;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0.5em 0 0.5em 0;
+
 }
 
 .orange {
@@ -106,6 +220,13 @@ a {
 
 .orange-text {
   color: #f5ae23;
+}
+
+.skill-list-item {
+
+    color: white;
+    font-size: 1em;
+
 }
 
 .white-text {
@@ -129,7 +250,8 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-/*  padding: 10px;*/
+
+
 }
 
 .center-content {
@@ -140,17 +262,6 @@ ul {
   list-style-type: none;
 }
 
-.biopic {
-  float: left;
-}
-
-.biopic img {
-    border-radius: 50px 15px;
-}
-
-img {
-  padding: 10px;
-}
 
 span {
   padding: 0.3em;
@@ -184,7 +295,7 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
   hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, 0.5) 120px, hsla(197, 62%, 11%, 0.5) 140px
   );/*last color is fallback*/
     background-color: khaki;
-    background-size: auto auto, auto auto;
+    background-size: auto auto auto auto;
 
 }
 
@@ -199,6 +310,37 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
   width: 100%;
 }
 
+#name {
+
+    color: paleturquoise;
+    font-size: 1.8em;
+    text-shadow: 2px -0 4px black;
+
+}
+
+#roleTitle {
+
+    color: goldenrod;
+    font-size: 1.4em;
+    text-shadow: 2px -0 4px black;
+
+
+}
+
+#skills {
+
+    padding: 0;
+    margin-bottom: 0;
+
+}
+
+#topContacts {
+
+    margin-top: 0.8em;
+
+}
+
+
 
 /*-----------------------------------------------*/
 /*   MEDIA QUERIES FOR DEVICES     */
@@ -206,6 +348,70 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
 
 /* media query for --- bootstrap xSMALL devices ----- break point */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    #name {
+
+          font-size: 1.2em;
+
+    }
+
+    #roleTitle {
+
+        font-size: 1em;
+
+    }
+
+    #skills-h3 {
+
+        font-size: 1.2em;
+
+    }
+
+    .bio-card {
+
+        padding: 1.5em 2em 1.5em 2em;
+
+    }
+
+    .bio-gallery {
+
+        display: none;
+
+    }
+
+    .bio-card {
+
+        width: 100%;
+
+    }
+
+    .resume-heading {
+
+        font-size: 1.3em;
+
+    }
+
+    .online-course {
+
+        font-size: 1.2em;
+
+    }
+
+    .education-entry,
+    .work-entry,
+    .project-entry {
+
+    font-weight: 500;
+    font-size: 0.9em;
+
+    }
+
+    .skill-list-item {
+
+         padding-right: 1em;
+
+    }
+
 
     /*    portfolio CSS rules*/
 
@@ -219,17 +425,66 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
         font-size: 0.7em;
 
     }
+
+    .welcome-message {
+
+        display: none;
+
+    }
 }
 
 /* media query for --- bootstrap SMALL devices ----- break point */
 @media only screen and (min-width: 768px) and (max-width: 991px)  {
 
+    .container {
+
+        padding: 2em;
+
+    }
+
+     .education-entry,
+    .work-entry,
+    .project-entry {
+
+        font-weight: 500;
+        font-size: 1em;
+
+    }
+
+    skill-list-item {
+
+        font-size: 1.4em;
+
+
+    }
+
     /*    portfolio CSS rules*/
-     .project header p {
+
+     .panel-body a {
+
+        font-size: 1.5em;
+
+    }
+
+    .panel-body p {
+
+        font-size: 1.5em;
+
+    }
+
+    .panel .collapsed {
+
+        font-size: 1em;
+
+    }
+
+    .project header p {
 
          font-size: 0.9em;
 
     }
+
+
 }
 
 /* media query for bootsrap MEDIUM desktops break point*/
@@ -239,7 +494,21 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
         border-radius: 45px 15px;
     }
 
+    .container {
+
+        padding: 2em;
+
+    }
+
+    .skill-list-item {
+
+        font-size: 1.4em;
+
+
+    }
+
 /*    portfolio CSS rules*/
+
 
     .project header p {
 
@@ -257,6 +526,25 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
 /* media query for --- bootstrap LARGE devices ----- break point */
 @media only screen and (min-width: 1200px) {
 
+    .bio-card {
+
+        margin-top: 2em;
+
+    }
+
+    .container {
+
+        padding: 2.5em;
+
+
+    }
+
+     .skill-list-item {
+
+         font-size: 1.7em;
+
+    }
+
     /*    portfolio CSS rules*/
 
      .project header p {
@@ -266,29 +554,5 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
 
 
 }
-
-
-/*
-@media only screen and (max-width: 750px) {
-
-  .biopic img {
-            border-radius: 45px 15px;
-
-}
-*/
-
-/* Media queries to handle various device widths */
-
-/*
-@media only screen and (min-width: 768px) {
-      .biopic img {
-            border-radius: 90px 50px;
-    }
-    .gray {
-        background-color: aqua;
-    }
-}
-*/
-
 
 
