@@ -281,7 +281,8 @@ span {
 }
 
 .bkgnd-pattern1 {
-    background:  url(/assets/images/xs-patterns/dark_embroidery.png);
+    background:  url(../assets/images/xs-patterns/dark_embroidery.png);
+
 }
 
 .bkgnd-patternCSS1 {
@@ -554,5 +555,3 @@ repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, 
 
 
 }
-
-

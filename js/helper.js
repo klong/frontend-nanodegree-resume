@@ -88,7 +88,6 @@ var HTMLonlineURL = '<a href="#">%data%</a>';
 /*MAP HELPER HTML*/
 var googleMap = '<div id="map"></div>';
 
-
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
@@ -103,6 +102,7 @@ $(document).ready(function () {
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 */
+
 var clickLocations = [];
 
 function logClicks(x, y) {
@@ -144,12 +144,11 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  /* 
+  /*
   For the map to be displayed, the googleMap var must be
   appended to #map-div in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#mapDiv'), mapOptions);
-
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -174,8 +173,8 @@ function initializeMap() {
     for (var job in work.jobs) {
       locations.push(work.jobs[job].location);
     }
-
-console.log(locations);
+    // log the locations used for map markers to console
+    console.log(locations);
     return locations;
 
   }
