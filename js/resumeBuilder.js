@@ -10,9 +10,9 @@ var bio = {
         "github" : "klong",
         "location" : "Bristol, UK"
     },
-    "biopic" : "assets/images/karl-2015",
+    "biopic" : "assets/images/karlAug2016",
     "welcomeMsg" : "I love to learn new technologies and workflows.",
-    "skills" : ["Interaction Design", "post production",  "Art", "Visual effect design & editing" ],
+    "skills" : ["HTML", "JavaScript", "CSS", "Interaction Design" ],
 
 /*DISPLAY BIO FUNCTION*/
 
@@ -20,11 +20,9 @@ var bio = {
         "use strict";
 
         //  format html name and role
-        var formattedHTMLheaderNameRole = HTMLheaderNameRole
-                                                                    .replace("%name%", bio.name)
-                                                                    .replace("%role%", bio.role);
+        var formattedHTMLheaderNameRole = HTMLheaderNameRole.replace("%name%", bio.name).replace("%role%", bio.role);
 
-        // formatt html bio picture
+        // format html bio picture
         var formattedBioPic = HTMLbioPic.replace(/%data%/g, bio.biopic).replace("%name%", bio.name);
          // formatt html Welcome message
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
@@ -64,15 +62,13 @@ var bio = {
 
 //  ADD HEADER CONTACTS
 
-        $("#topContacts").append(formattedMobile)
-                .append(formattedEmail)
+        $("#topContacts").append(formattedEmail)
                 .append(formattedGithub)
                 .append(formattedLocation);
 
 //  ADD FOOTER CONTACTS
 
-        $("#footerContacts").append(formattedMobile)
-                .append(formattedEmail)
+        $("#footerContacts").append(formattedEmail)
                 .append(formattedGithub)
                 .append(formattedLocation);
 
@@ -263,15 +259,15 @@ var education = {
                     // format html online course entry
                     var formattedCourseTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
                     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-                    var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+                    var formattedEduDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
                     var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 
 // ADD ONLINE COURSE ENTRY
 
                     $('#education').append(HTMLOnlineStart);
                     $('.online-school-entry:last').append(formattedCourseTitle + formattedOnlineSchool);
-                    $('.online-school-entry:last').append(formattedDates);
-//                    $('.education-entry:last').append(formattedOnlineURL);
+                    $('.online-school-entry:last').append(formattedEduDates);
+                    $('.education-entry:last').append(formattedOnlineURL);
 
                 }
         }
@@ -570,4 +566,3 @@ var projects = {
     education.display();
     // ADD GOOGLE MAP
     $("#map").append(googleMap);
-
