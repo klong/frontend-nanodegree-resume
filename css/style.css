@@ -11,7 +11,7 @@ h4,
 h5,
 h6 {
 
-  padding:0;
+  padding: 0;
   margin:0;
   font-family: "Roboto", sans-serif;
 
@@ -47,8 +47,7 @@ p {
 
 .biopic img {
 
-  border-radius: 50px 15px;
-  float: right;
+  border-radius: 0.6em 3em;
   width: auto;
   margin-bottom: 2em;
   padding: 0;
@@ -88,14 +87,14 @@ picture {
 
 .resume-heading {
 
-  font-size: 1.3em;
+  font-size: 1.4em;
   text-align: left;
 
 }
 
 .resume-heading .small {
 
-  font-size: 1.5em;
+  font-size: 1.2em;
   padding-left: 0;
 
 }
@@ -115,7 +114,7 @@ picture {
 
 .online-school-entry {
 
-  /*padding: 1.5em 0 2em 2em;*/
+  padding: 1.5em 0 2em 2em;
 
 }
 
@@ -131,10 +130,10 @@ h1 {
 h2 {
 
   color: darkgray;
-  font-weight: bold;
-  font-size: 1em;
-  line-height: 1.2em;
-  padding-left: 0.5em;
+  font-weight: bolder;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  padding-left: 1em;
 
 }
 
@@ -245,8 +244,12 @@ a {
 .skill-list-item {
 
   color: white;
+  background-color: rgba(124, 145, 234, 0.5);
   font-size: 1em;
   font-style: italic;
+  border-radius: 0.5em;
+  padding: 0.3em;
+  margin-bottom: 0.3em;
 
 }
 
@@ -303,6 +306,8 @@ span {
 .lets-connect {
 
   text-align: center;
+  border-radius: 16px;
+  padding-bottom: 1em;
 
 }
 
@@ -324,13 +329,17 @@ span {
 
   background-color:#269;
 
+
 }
 
 #map {
 
   display: block;
   height: 100%;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 0;
 
 }
 
@@ -344,8 +353,8 @@ span {
 #name {
 
   color: white;
-  font-size: 1.8em;
-  /*text-shadow: 2px -0 4px black;*/
+  font-size: 1.6em;
+
 
 }
 
@@ -353,7 +362,6 @@ span {
 
   color: goldenrod;
   font-size: 1.4em;
-  /*text-shadow: 2px -0 4px black;*/
   font-weight: bold;
 
 }
@@ -362,6 +370,7 @@ span {
 
   padding: 0;
   margin-bottom: 0;
+  width: 80%;
 
 }
 
@@ -380,6 +389,13 @@ span {
 /* media query for --- bootstrap xSMALL devices ----- break point */
 @media only screen and (max-width: 767px) {
 
+
+      .welcome-message {
+
+        display: none;
+
+      }
+
     #name {
 
       font-size: 1.2em;
@@ -391,6 +407,14 @@ span {
       font-size: 1em;
 
     }
+
+
+    #skills {
+
+      width: 70%;
+
+    }
+
 
     #skills-h3 {
 
@@ -418,7 +442,7 @@ span {
 
     .resume-heading {
 
-      font-size: 1.3em;
+      font-size: 1.4em;
 
     }
 
@@ -437,31 +461,6 @@ span {
 
     }
 
-    .skill-list-item {
-
-      /*padding-right: 0.6em;*/
-
-    }
-
-    /*    portfolio CSS rules*/
-
-    .project header p {
-
-      font-size: 0.8em;
-
-    }
-
-    .project-title small {
-
-      font-size: 0.7em;
-
-    }
-
-    .welcome-message {
-
-      display: none;
-
-    }
 }
 
 /* media query for --- bootstrap SMALL devices ----- break point */
@@ -488,29 +487,10 @@ span {
 
     }
 
-    /*    portfolio CSS rules*/
 
-     .panel-body a {
+    #skills {
 
-      font-size: 1.5em;
-
-    }
-
-    .panel-body p {
-
-      font-size: 1.5em;
-
-    }
-
-    .panel .collapsed {
-
-      font-size: 1em;
-
-    }
-
-    .project header p {
-
-      font-size: 0.9em;
+      width: 100%;
 
     }
 
@@ -532,24 +512,18 @@ span {
 
     .skill-list-item {
 
-      font-size: 1.4em;
+      font-size: 1.3em;
 
     }
 
-/*    portfolio CSS rules*/
 
+    #skills {
 
-    .project header p {
-
-      font-size: 0.8em;
+      width: 100%;
 
     }
 
-    .project-title small {
 
-      font-size: 0.7em;
-
-    }
 }
 
 
@@ -570,16 +544,9 @@ span {
 
      .skill-list-item {
 
-        font-size: 1.7em;
+        font-size: 1.5em;
 
     }
 
-    /*    portfolio CSS rules*/
-
-     .project header p {
-        font-size: 1em;
-        padding-left: 0.3em;
-
-    }
 
 }

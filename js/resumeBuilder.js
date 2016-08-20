@@ -11,8 +11,8 @@ var bio = {
         "location" : "Bristol, UK"
     },
     "biopic" : "assets/images/karlAug2016",
-    "welcomeMsg" : "making things to help people achieve their goals.",
-    "skills" : ["Interaction Design", "HTML", "JavaScript", "CSS"],
+    "welcomeMsg" : "making software to help people achieve their goals.",
+    "skills" : ["Interaction Design", "HTML 5", "JavaScript", "CSS"],
 
 /*DISPLAY BIO FUNCTION*/
 
@@ -190,22 +190,22 @@ var education = {
     ] ,
     "onlineCourses": [
         {
-            "title" : "Front-end Web Developer",
+            "title" : "Front-end Web Developer Nanodegree",
             "school" : "Udacity",
             "dates" : "2016",
-            "url" : "k"
+            "url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
         },
         {
             "title" : "Mathematics",
             "school" : "Open University Courses",
             "dates" : "2013",
-            "url" : "l"
+            "url" : "http://www.open.ac.uk/courses/qualifications/q31"
         },
         {
             "title" : "Computers Commerce & Industry",
             "school" : "Open University Software Engineering Module",
             "dates" : "1998 – 1999",
-            "url" : "l"
+            "url" : "http://www.open.ac.uk/postgraduate/modules/m814"
         }
     ] ,
 
@@ -215,7 +215,7 @@ var education = {
 
 		for(var school in education.schools) {
 
-            // html formatted Education Schools-College-University
+      // html formatted Education Schools-College-University
 			var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
 			var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 			var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
@@ -241,17 +241,15 @@ var education = {
 
                 for(var course in education.onlineCourses) {
                     // format html online course entry
-                    var formattedCourseTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+                    var formattedCourseTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title).replace("%link%", education.onlineCourses[course].url);
                     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
                     var formattedEduDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
-                    var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 
                     // ADD ONLINE COURSE ENTRY
 
                     $('#education').append(HTMLOnlineStart);
                     $('.online-school-entry:last').append(formattedCourseTitle + formattedOnlineSchool);
                     $('.online-school-entry:last').append(formattedEduDates);
-                    $('.education-entry:last').append(formattedOnlineURL);
                 }
         }
     }
@@ -269,8 +267,15 @@ var projects = {
         "description":  "",
         "websiteURL": "http://www.google.com",
         "images":   [
-            "assets/images/karl-2015.jpg"
-            ],
+          {
+              imageName: "assets/images/karl-2015",
+              imgExtType: ".jpg"
+          },
+          {
+              imageName: "assets/images/karlAug2016",
+              imgExtType: ".jpg"
+          }
+        ],
         "projectCourses": [
                     {
                         "name": "Intro to HTML and CSS.",
@@ -354,9 +359,15 @@ var projects = {
         "description":  "HTML5 Canvas Game.",
         "websiteURL": "http://www.google.com",
         "images":   [
-            "assets/images/Frogger_game_arcade.png",
-            "assets/images/Atari2600_frogger.jpg"
-            ],
+            {
+                imageName: "assets/images/Frogger_game_arcade",
+                imgExtType: ".png"
+            },
+            {
+                imageName: "assets/images/Atari2600_frogger",
+                imgExtType: ".jpg"
+            }
+          ],
         "projectCourses": [
 
                 {
@@ -395,10 +406,11 @@ var projects = {
             // if any project images add formatted to project entry
             if (projects.projects[project].images.length > 0) {
 
-                for (var image in projects.projects[project].images) {
-
+                for (var arrayIndex in projects.projects[project].images) {
+                    var imageNameRef = projects.projects[project].images[arrayIndex].imageName;
+                    var imageExtType = projects.projects[project].images[arrayIndex].imgExtType;
                     // format html project image
-                    var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+                    var formattedImage = HTMLprojectImage.replace(/%imageName%/g, imageNameRef).replace(/%imgExtType%/g, imageExtType);
 
                     // ADD PROJECT IMAGE(S)
                     $(".project-entry:last").append(formattedImage);
@@ -407,127 +419,6 @@ var projects = {
 
             }
         }
-    },
-
-/*DISPLAY MY PROJECT FUNCTION*/
-
-    "myDisplay": function() {
-
-         for (var myproject in projects.projects) {
-             var myprojectID = projects.projects[myproject].ProjectID;
-
-            // ARTICLE HTML
-            var myformattedProjectStart = myHTMLprojectStart.replace(/%id%/g, myprojectID);
-            // HEADER HTML
-            var myformattedHeader = myHTMLprojectHeader
-                .replace(/%id%/g, myprojectID)
-                .replace(/%heading%/g, projects.projects[myproject].heading)
-                .replace(/%title%/g, projects.projects[myproject].title);
-            // PROJECT COLLAPSE SECTION HTML
-            var myformattedCollapseSection = myHTMLprojectCollapseSection.replace(/%id%/g, myprojectID);
-            // PROJECT COLUMN 1 HTML
-            var myformattedFirstColumn = myHTMLprojectFirstColumn.replace(/%id%/g, myprojectID);
-            var myformattedWebsite = myHTMLprojectWebsite.replace("%data%", projects.projects[myproject].websiteURL);
-            // PROJECT COLUMN 2 HTML
-            var myformattedSecondColumn = myHTMLprojectSecondColumn.replace(/%id%/g, myprojectID);
-            var myformattedprojectAccordion = myHTMLprojectAccordion.replace(/%id%/g, myprojectID);
-
-            // FOOTER HTML
-            var myformattedFooter = myHTMLprojectFooter.replace(/%data%/g, projects.projects[myproject].dates);
-
-// ADD MY PROJECT(S) TO RESUME
-            $("#my-projects").append(myformattedProjectStart);
-
-            $("#" + myprojectID)
-                        .append(myformattedHeader)
-                        .append(myformattedCollapseSection)
-                        .append(myformattedFooter);
-
-            // FIRST COLUMN
-            $("#" + myprojectID + "Section").append(myformattedFirstColumn);
-            // SECOND COLUMN
-            $("#" + myprojectID + "Section").append(myformattedSecondColumn);
-
-            // IMAGE(S) HTML
-            if (projects.projects[myproject].images.length > 0) {
-
-                var projectArrayRef = projects.projects[myproject].images;
-
-                for (var image in projectArrayRef) {
-                    var imageFileRef = projectArrayRef[image].slice(0, -4);
-                    var imageType = projectArrayRef[image].slice(-4); //get the last 4 chars of image url for the img file extension
-
-                    // format html project image(s)
-                    var formattedImage = myHTMLprojectImage
-                        .replace(/%imageName%/g, imageFileRef)
-                        .replace(/%ImgExtType%/g, imageType)
-                        .replace(/%name%/g, projects.projects[myproject].title);
-
-                    // ADD IMAGE(S)
-                    $("#" + myprojectID + "FirstColumn:last").append(formattedImage);
-
-                }
-
-            }
-
-            // ADD WEBSITE
-            $("#" + myprojectID + "FirstColumn:last").append(myformattedWebsite);
-
-// SECOND COLUMN
-
-             // ADD MY PROJECT ACCORDION
-            $("#" + myprojectID + "SecondColumn:last").append(myformattedprojectAccordion);
-
-            // PROJECT ACCORDION COURSE(S)
-            if (projects.projects[myproject].projectCourses.length > 0) {
-
-                var AccordionCourseArrayRef = projects.projects[myproject].projectCourses;
-
-                for (var course in AccordionCourseArrayRef) {
-
-                    // PROJECT ACCORDION COURSE HTML
-                    var formattedProjectCourseEntry = myHTMLProjectAccordionListEntry
-                              .replace("%projectCourse%", AccordionCourseArrayRef[course].name)
-                              .replace("%courseURL%", AccordionCourseArrayRef[course].url);
-
-                    // ADD PROJECT ACCORDION COURSE
-                    $("#" + myprojectID + "CourseList:last").append(formattedProjectCourseEntry);
-                }
-            };
-
-            // PROJECT ACCORDION GOAL(S)
-
-            if (projects.projects[myproject].learningGoals.length > 0) {
-
-                var AccordionGoalsArrayRef = projects.projects[myproject].learningGoals;
-
-                for (var goal in AccordionGoalsArrayRef) {
-
-                    // PROJECT ACCORDION GOAL HTML
-                    var formattedProjectGoalEntry = myHTMLProjectAccordionText.replace("%data%", AccordionGoalsArrayRef[goal]);
-
-                    // ADD PROJECT ACCORDION GOAL
-                    $("#" + myprojectID + "LearningGoalList:last").append(formattedProjectGoalEntry);
-
-                }
-            };
-
-            // PROJECT ACCORDION SKILL(S) ATTAINED
-
-            if (projects.projects[myproject].skillsAttained.length > 0) {
-
-                var AccordionSkillsArrayRef = projects.projects[myproject].skillsAttained;
-
-                for (var skill in AccordionSkillsArrayRef) {
-
-                    // PROJECT ACCORDION GOAL HTML
-                    var formattedProjectSkillEntry = myHTMLProjectAccordionText.replace("%data%", AccordionSkillsArrayRef[skill]);
-
-                    // ADD PROJECT ACCORDION GOAL
-                    $("#" + myprojectID + "SkillAttainedList:last").append(formattedProjectSkillEntry);
-                }
-            };
-        }
     }
 };
 
@@ -535,7 +426,7 @@ var projects = {
 
     bio.display();
     work.display();
-    // projects.myDisplay();
+    projects.display();
     education.display();
     // ADD GOOGLE MAP
     $("#map").append(googleMap);
