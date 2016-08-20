@@ -11,8 +11,8 @@ var bio = {
         "location" : "Bristol, UK"
     },
     "biopic" : "assets/images/karlAug2016",
-    "welcomeMsg" : "I love to learn new technologies and workflows.",
-    "skills" : ["HTML", "JavaScript", "CSS", "Interaction Design" ],
+    "welcomeMsg" : "making things to help people achieve their goals.",
+    "skills" : ["Interaction Design", "HTML", "JavaScript", "CSS"],
 
 /*DISPLAY BIO FUNCTION*/
 
@@ -26,13 +26,11 @@ var bio = {
         var formattedBioPic = HTMLbioPic.replace(/%data%/g, bio.biopic).replace("%name%", bio.name);
          // formatt html Welcome message
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-
-         //  format html top  & footer contacts
+        //  format html top  & footer contacts
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
 
 //  ADD NAME & ROLE
         $("#bio-card:last").append(formattedHTMLheaderNameRole);
@@ -40,38 +38,30 @@ var bio = {
         $("#bio-card:last").append(formattedWelcomeMsg);
 
         if (bio.skills.length > 0) {
-
-//  ADD SKILLS HEADING
+        //  ADD SKILLS HEADING
             $("#bio-card:last").append(HTMLskillsStart);
 
             for (var skill in bio.skills) {
-
                 //  format html skill(s)
                 var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-//  ADD SKILL(S)
+                //  ADD SKILL(S)
                 $("#skills").append(formattedSkill);
-
             }
 
         }
 
 //  ADD RESUME BIO PICTURE
-
         $("#bioGallery").append(formattedBioPic);
 
-
 //  ADD HEADER CONTACTS
-
         $("#topContacts").append(formattedEmail)
                 .append(formattedGithub)
                 .append(formattedLocation);
 
 //  ADD FOOTER CONTACTS
-
         $("#footerContacts").append(formattedEmail)
-                .append(formattedGithub)
-                .append(formattedLocation);
-
+          .append(formattedGithub)
+          .append(formattedLocation);
     }
 };
 
@@ -164,7 +154,6 @@ var work = {
             $(".work-entry:last").append(formattedJobDates);
             $(".work-entry:last").append(formattedJobLocation);
             $(".work-entry:last").append(formattedJobDescription);
-
         }
     }
 };
@@ -180,7 +169,7 @@ var education = {
             "degree" : "MA",
             "majors" : ["Moving Image Production"],
             "dates" : "2001 – 2003",
-            "url" : "#"
+            "url" : ""
         },
         {
             "name" : "Coventry University",
@@ -188,7 +177,7 @@ var education = {
             "degree" : "MA",
             "majors" : ["Electronic Graphics"],
             "dates" : "1991 – 1993",
-            "url" : "#"
+            "url" : ""
         },
         {
             "name" : "Goldsmiths Art College",
@@ -196,27 +185,27 @@ var education = {
             "degree" : "BA (Hons)",
             "majors" : ["Visual Art"],
             "dates" : "1986 - 1989",
-            "url" : "#"
+            "url" : ""
         }
     ] ,
     "onlineCourses": [
         {
+            "title" : "Front-end Web Developer",
+            "school" : "Udacity",
+            "dates" : "2016",
+            "url" : "k"
+        },
+        {
             "title" : "Mathematics",
             "school" : "Open University Courses",
             "dates" : "2013",
-            "url" : "#"
+            "url" : "l"
         },
         {
-            "title" : "Javascript Basics",
-            "school" : "Udacity",
-            "dates" : "2015",
-            "url" : "http://www.udacity.com/course/ud804"
-        },
-         {
-            "title" : "Computers, Commerce & Industry",
+            "title" : "Computers Commerce & Industry",
             "school" : "Open University Software Engineering Module",
-            "dates" : "1998 – 1999" ,
-            "url" : "#"
+            "dates" : "1998 – 1999",
+            "url" : "l"
         }
     ] ,
 
@@ -234,41 +223,35 @@ var education = {
 
 //  ADD EDUCATION ENTRY
 
-            $('#education').append(HTMLschoolStart);
-            $('.education-entry:last').append(formattedSchool + formattedDegree);
-            $('.education-entry:last').append(formattedDates);
+      $('#education').append(HTMLschoolStart);
+      $('.education-entry:last').append(formattedSchool + formattedDegree);
+      $('.education-entry:last').append(formattedDates);
 			$('.education-entry:last').append(formattedLocation);
 
 			for(var major in education.schools[school].majors) {
-                // html formatted Major(s)
+        // html formatted Major(s)
 				var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
 
 //  ADD EDUCATION MAJOR
 				$('.education-entry:last').append(formattedMajor);
 			}
-
         }
-
-
         if (education.onlineCourses.length > 0) {
-
             $('#education').append(HTMLonlineClasses);
 
                 for(var course in education.onlineCourses) {
-
                     // format html online course entry
                     var formattedCourseTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
                     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
                     var formattedEduDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
                     var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 
-// ADD ONLINE COURSE ENTRY
+                    // ADD ONLINE COURSE ENTRY
 
                     $('#education').append(HTMLOnlineStart);
                     $('.online-school-entry:last').append(formattedCourseTitle + formattedOnlineSchool);
                     $('.online-school-entry:last').append(formattedEduDates);
                     $('.education-entry:last').append(formattedOnlineURL);
-
                 }
         }
     }
@@ -417,7 +400,7 @@ var projects = {
                     // format html project image
                     var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
 
-// ADD PROJECT IMAGE(S)
+                    // ADD PROJECT IMAGE(S)
                     $(".project-entry:last").append(formattedImage);
 
                 }
@@ -451,8 +434,6 @@ var projects = {
 
             // FOOTER HTML
             var myformattedFooter = myHTMLprojectFooter.replace(/%data%/g, projects.projects[myproject].dates);
-
-
 
 // ADD MY PROJECT(S) TO RESUME
             $("#my-projects").append(myformattedProjectStart);
@@ -495,11 +476,9 @@ var projects = {
 // SECOND COLUMN
 
              // ADD MY PROJECT ACCORDION
-
             $("#" + myprojectID + "SecondColumn:last").append(myformattedprojectAccordion);
 
             // PROJECT ACCORDION COURSE(S)
-
             if (projects.projects[myproject].projectCourses.length > 0) {
 
                 var AccordionCourseArrayRef = projects.projects[myproject].projectCourses;
@@ -508,11 +487,10 @@ var projects = {
 
                     // PROJECT ACCORDION COURSE HTML
                     var formattedProjectCourseEntry = myHTMLProjectAccordionListEntry
-                                                                                    .replace("%projectCourse%", AccordionCourseArrayRef[course].name)
-                                                                                    .replace("%courseURL%", AccordionCourseArrayRef[course].url);
+                              .replace("%projectCourse%", AccordionCourseArrayRef[course].name)
+                              .replace("%courseURL%", AccordionCourseArrayRef[course].url);
 
                     // ADD PROJECT ACCORDION COURSE
-
                     $("#" + myprojectID + "CourseList:last").append(formattedProjectCourseEntry);
                 }
             };
@@ -532,7 +510,6 @@ var projects = {
                     $("#" + myprojectID + "LearningGoalList:last").append(formattedProjectGoalEntry);
 
                 }
-
             };
 
             // PROJECT ACCORDION SKILL(S) ATTAINED
@@ -548,21 +525,17 @@ var projects = {
 
                     // ADD PROJECT ACCORDION GOAL
                     $("#" + myprojectID + "SkillAttainedList:last").append(formattedProjectSkillEntry);
-
                 }
-
             };
         }
     }
 };
 
-
-
 /*BUILD THE RESUME PAGE*/
 
     bio.display();
     work.display();
-    projects.myDisplay();
+    // projects.myDisplay();
     education.display();
     // ADD GOOGLE MAP
     $("#map").append(googleMap);

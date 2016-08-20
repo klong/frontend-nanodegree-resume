@@ -49,9 +49,9 @@ var myHTMLprojectFirstColumn = '<div class="col-xs-6 col-md-4 col-lg-6 first-col
 var myHTMLprojectImage = '<figure><a href="#"><picture><source media="(min-width: 1200px)" srcset="%imageName%-medium_2x%ImgExtType% 2x, %imageName%-medium%ImgExtType%" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="%imageName%-medium%ImgExtType% 2x, %imageName%-small%ImgExtType%" /><source media="(min-width: 768px) and (max-width: 991px)" srcset="%imageName%-medium_2x%ImgExtType% 2x, %imageName%-medium%ImgExtType%" /><img class="img-rounded img-responsive" alt="%name%" src="%imageName%-small%ImgExtType%"></picture></a><figcaption></figcaption></figure>';
 var myHTMLprojectWebsite = '<a href="%data%">Website</a>';
 
+var myHTMLprojectAccordion =  '<div class="panel-group" id="%id%Accordion" role="tablist" aria-multiselectable="true"><div class="panel panel-default"><div class="panel-heading" role="tab" id="%id%headingOne"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#%id%Accordion" href="#%id%collapseOne" aria-expanded="false" aria-controls="%id%collapseOne">Courses</a></h4></div><div id="%id%collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="%id%headingOne"><div id="%id%CourseList" class="panel-body"></div></div></div>  <div class="panel panel-default"><div class="panel-heading" role="tab" id="%id%headingTwo"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#%id%Accordion" href="#%id%collapseTwo" aria-expanded="false" aria-controls="%id%collapseTwo">Learning Goals</a></h4></div><div id="%id%collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="%id%headingTwo"><div id="%id%LearningGoalList" class="panel-body"></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="%id%headingThree"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#%id%Accordion" href="#%id%collapseThree" aria-expanded="false" aria-controls="%id%collapseThree">Skills attained</a></h4></div><div id="%id%collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="%id%headingThree"><div id="%id%SkillAttainedList" class="panel-body"></div></div></div></div>';
 var myHTMLprojectSecondColumn = '<div class="col-xs-6 col-md-8 col-lg-6 second-column" id="%id%SecondColumn"></div>';
 
-var myHTMLprojectAccordion =  '<div class="panel-group" id="%id%Accordion" role="tablist" aria-multiselectable="true"><div class="panel panel-default"><div class="panel-heading" role="tab" id="%id%headingOne"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#%id%Accordion" href="#%id%collapseOne" aria-expanded="false" aria-controls="%id%collapseOne">Courses</a></h4></div><div id="%id%collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="%id%headingOne"><div id="%id%CourseList" class="panel-body"></div></div></div>  <div class="panel panel-default"><div class="panel-heading" role="tab" id="%id%headingTwo"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#%id%Accordion" href="#%id%collapseTwo" aria-expanded="false" aria-controls="%id%collapseTwo">Learning Goals</a></h4></div><div id="%id%collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="%id%headingTwo"><div id="%id%LearningGoalList" class="panel-body"></div></div></div><div class="panel panel-default"><div class="panel-heading" role="tab" id="%id%headingThree"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#%id%Accordion" href="#%id%collapseThree" aria-expanded="false" aria-controls="%id%collapseThree">Skills attained</a></h4></div><div id="%id%collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="%id%headingThree"><div id="%id%SkillAttainedList" class="panel-body"></div></div></div></div>';
 
 var myHTMLProjectAccordionListEntry = '<li class="list-group-item"><a href="%courseURL%">%projectCourse%</a></li>';
 
@@ -60,8 +60,6 @@ var myHTMLProjectAccordionText = '<p>%data%</p>';
 var myHTMLprojectFooter ='<!-- %id% footer --><footer><span class="copyright">© %data%</span></footer>';
 
 var myHTMLprojectDates = '<span class="date-text">%data%</span>';
-
-
 
 var myHTMLprojectCourse = '';
 
@@ -73,7 +71,7 @@ var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' - %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<div class="major"><em>Major: %data%</em></div>';
+var HTMLschoolMajor = '<div class="major"><em>%data%</em></div>';
 
 //  online courses
 var HTMLOnlineStart = '<div class="education-entry online-school-entry"></div>';
@@ -81,7 +79,7 @@ var HTMLonlineClasses = '<span><h3 class="online-course">Online Classes</h3></sp
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<a href="#">%data%</a>';
+var HTMLonlineURL = '<a href="#" target="_blank">%data%</a>';
 
 //var internationalizeButton = '<button>Internationalize</button>';
 
