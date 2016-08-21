@@ -32,23 +32,27 @@ var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p class="job-description">%data%</p>';
 
 /*PROJECT HELPER HTML*/
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#"><h4>%data%</h4></a>';
+var HTMLprojectStart = '<div class="project-entry well"></div>';
+var HTMLprojectTitle = '<h1>%data%</h1>';
+var HTMLprojectHeading = '<h4>%data%</h4>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p>%data%</p>';
-// var HTMLprojectImage = '<img src="%data%">';
-var HTMLprojectImage = '<figure><picture><source media="(min-width: 1200px)" srcset="%imageName%-medium_2x%imgExtType% 2x, %imageName%-medium%imgExtType%" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="%imageName%-medium%imgExtType% 2x, %imageName%-small%imgExtType%" /><source media="(min-width: 768px) and (max-width: 991px)" srcset="%imageName%-medium_2x%imgExtType% 2x, %imageName%-medium%imgExtType%" /><img class="img-rounded img-responsive" alt="%name%" src="%imageName%-small%imgExtType%"></picture></a><figcaption></figcaption></figure>';
+var HTMLprojectDescription = '<p class="project-description">%data%</p>';
+var HTMLprojectGalleryStart = '<div class="media">';
+var HTMLprojectImage = '<div class="media"><div class="media-left"><img class="media-object project-image project-image" alt="%altText%" src="%imageName%-small%imgExtType%"></img></div><div class="media-body"><h4 class="media-heading">%imageHeading%</h4>%imageDescription%</div></div>';
+// var HTMLprojectImage = '<div class="media-left"><picture><source media="(min-width: 1200px)" srcset="%imageName%-medium_2x%imgExtType% 2x, %imageName%-medium%imgExtType%" /><source media="(min-width: 992px) and (max-width: 1199px)" srcset="%imageName%-medium%imgExtType% 2x, %imageName%-small%imgExtType%" /><source media="(min-width: 768px) and (max-width: 991px)" srcset="%imageName%-medium_2x%imgExtType% 2x, %imageName%-medium%imgExtType%" /><img class="media-object thumbnail img-rounded img-responsive" alt="%name%" src="%imageName%-small%imgExtType%"></img></picture></div><div class="media-body"><p>%imageDescription%</p></div></div>';
+var HTMLprojectGalleryEnd = '</div>';
+var HTMLwebsiteLink = '<a class="project-website-link" href="%websiteURL%" target="_blank">website<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>';
+var HTMLsocialSiteLink = '<a class=" socialLink btn btn-social-icon btn-%socialName%" href="%socialURL%" target="_blank"><span class="fa fa-%socialName%"></span>%socialName%</a>';
 
 /*EDUCATION HELPER HTML*/
 
- //  schools
+//  schools
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<h4 href="#">%data%';
 var HTMLschoolDegree = ' - %data%</h4>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<div class="major"><em>%data%</em></div>';
-
 //  online courses
 var HTMLOnlineStart = '<div class="education-entry online-school-entry"></div>';
 var HTMLonlineClasses = '<span><h3 class="online-course">Online Classes</h3></span>';
@@ -71,39 +75,8 @@ $(document).ready(function () {
   });
 });
 
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
-*/
-
-var clickLocations = [];
-
-function logClicks(x, y) {
-    "use strict";
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
-}
-
-$(document).click(function (loc) {
-    var x = loc.pageX;
-    var y = loc.pageY;
-
-    logClicks(x, y);
-});
-
-
-/*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
-https://developers.google.com/maps/documentation/javascript/reference
-*/
 
 var map;    // declares a global map variable
-
 
 /*
 Start here! initializeMap() is called when page is loaded.

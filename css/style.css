@@ -61,11 +61,6 @@ figure.biopic {
 
 }
 
-picture {
-
-  background-color: yellow;
-
-}
 
 .clear-fix {
 
@@ -101,15 +96,25 @@ picture {
 
 .education-entry,
 .work-entry,
-.project-entry {
-
+.project-entry  {
   font-weight: 500;
   font-size: 1.2em;
   margin: 0.3em 1em 0.3em 1em;
   padding: 0.5em 2em 0.5em 2em;
   background-color: white;
   border-radius: 0.5em;
+}
 
+
+.project-link {
+
+  font-size: 1em;
+
+}
+
+
+.thumbnail {
+  width: 25%;
 }
 
 .online-school-entry {
@@ -149,7 +154,7 @@ h3 {
 h4 {
 
   font-weight: bold;
-  font-size: 0.7em;
+  font-size: 1.2em;
   color: #4a4a4a;
   line-height: 1em;
 
@@ -210,6 +215,8 @@ a {
   display: block;
 
 }
+
+
 
 .welcome-message {
 
@@ -319,6 +326,29 @@ span {
 
 }
 
+.project-image {
+
+  width: 120px;
+  border-radius: 0.8em;
+  margin-right: 0.6em;
+
+}
+
+
+.project-description {
+
+  padding-top: 1.5em;
+  margin-left: 0;
+
+}
+
+.project-website-link {
+
+  padding-top: 1.6em;
+
+}
+
+
 .bkgnd-pattern1 {
 
   background-color: #131313;
@@ -329,6 +359,12 @@ span {
 
   background-color:#269;
 
+
+}
+
+.socialLink {
+
+  padding: 10px 5px;
 
 }
 
@@ -390,11 +426,11 @@ span {
 @media only screen and (max-width: 767px) {
 
 
-      .welcome-message {
+    .welcome-message {
 
-        display: none;
+      display: none;
 
-      }
+    }
 
     #name {
 
@@ -452,13 +488,8 @@ span {
 
     }
 
-    .education-entry,
-    .work-entry,
-    .project-entry {
-
-      font-weight: 500;
-      font-size: 0.9em;
-
+    .thumbnail {
+      width: 80%;
     }
 
 }
@@ -469,15 +500,6 @@ span {
     .container {
 
       padding: 2em;
-
-    }
-
-    .education-entry,
-    .work-entry,
-    .project-entry {
-
-      font-weight: 500;
-      font-size: 1em;
 
     }
 
@@ -494,6 +516,9 @@ span {
 
     }
 
+    .thumbnail {
+      width: 30%;
+    }
 
 }
 
@@ -523,7 +548,9 @@ span {
 
     }
 
-
+    .thumbnail {
+      width: 30%;
+    }
 }
 
 
@@ -546,6 +573,10 @@ span {
 
         font-size: 1.5em;
 
+    }
+
+    .thumbnail {
+      width: 20%;
     }
 
 

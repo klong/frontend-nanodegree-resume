@@ -10,57 +10,54 @@
     <script src="js/jQuery.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCRpuFnelWb6VGyKNtMyUbKopJC-1anU7g&libraries=places"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCRpuFnelWb6VGyKNtMyUbKopJC-1anU7g&libraries=places">
+    </script>
     <script src="js/helper.js"></script>
-    <!-- custom resume CSS. -->
-    <link href="css/style.css" rel="stylesheet">
     <!-- Bootstrap CSS-->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome-css/css/font-awesome.min.css" rel="stylesheet">
+    <!-- custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
 <!-- MAIN RESUME-->
-    <div id="main" class="container">
+  <div id="main" class="container">
 <!--BIOGRAPHICAL SECTION-->
-            <div class="bio row bkgnd-patternCSS1" id ="bio-row">
+      <div class="bio row bkgnd-patternCSS1" id ="bio-row">
 <!-- BIO GALLERY -->
-              <div class="bio-gallery" id="bioGallery"></div>
+        <div class="bio-gallery" id="bioGallery"></div>
 <!-- BIO CARD -->
-              <div class="bio-card" id="bio-card"></div>
-            </div>
+        <div class="bio-card" id="bio-card"></div>
+      </div>
 <!-- TOP CONTACTS -->
-            <div class="row bkgnd-pattern1">
-              <ul id="topContacts" class="flex-box"></ul>
-            </div>
+      <div class="row bkgnd-pattern1">
+        <ul id="topContacts" class="flex-box"></ul>
+      </div>
 <!--WORK EXPERIENCE SECTION-->
-            <div id="workExperience" class="row gray">
-              <h2 class="resume-heading">Work Experience</h2>
-            </div>
+      <div id="workExperience" class="row gray">
+        <h2 class="resume-heading">Work Experience</h2>
+      </div>
 <!--PROJECTS-->
-            <div id="projects" class="row">
-              <h2 class="resume-heading">Projects</h2>
-            </div>
+      <div id="projects" class="row">
+        <h2 class="resume-heading">Projects</h2>
+      </div>
  <!--EDUCATION-->
-            <div id="education" class="row gray">
-              <h2 class="resume-heading">Education</h2>
-            </div>
+      <div id="education" class="row gray">
+        <h2 class="resume-heading">Education</h2>
+      </div>
 <!--MAP SECTION-->
-            <div id="map" class="row">
-              <h2 class="resume-heading">Where I've Lived and Worked</h2>
-              <div id="mapDiv"></div>
-            </div>
+      <div id="map" class="row">
+        <h2 class="resume-heading">Where I've Lived and Worked</h2>
+        <div id="mapDiv" class="map-frame"></div>
+      </div>
 <!--CONTACT FOOTER-->
-            <div id="resume-heading" class="row lets-connect bkgnd-pattern1">
-              <h2 class="center-text">Let's Connect</h2>
-              <ul id="footerContacts" class="flex-box">
-              </ul>
-            </div>
-</div>
-
-<!--Resume javascript-->
-
-<script src="js/resumeBuilder.js"></script>
-
+      <div id="resume-heading" class="row lets-connect bkgnd-pattern1">
+        <h2 class="center-text">Let's Connect</h2>
+        <ul id="footerContacts" class="flex-box"></ul>
+      </div>
+  </div>
+  <!--Resume javascript-->
+  <script src="js/resumeBuilder.js"></script>
 </body>
 </html>

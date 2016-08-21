@@ -259,44 +259,57 @@ var education = {
 
 var projects = {
     "projects": [
-        {
-        "ProjectID": "p0",
-        "title": "About me",
-        "heading": "Create and edit simple HTML and CSS files.",
-        "dates": 2015,
-        "description":  "",
-        "websiteURL": "http://www.google.com",
-        "images":   [
-          {
-              imageName: "assets/images/karl-2015",
-              imgExtType: ".jpg"
-          },
-          {
-              imageName: "assets/images/karlAug2016",
-              imgExtType: ".jpg"
-          }
-        ],
-        "projectCourses": [
-                    {
-                        "name": "Intro to HTML and CSS.",
-                        "url": "https://www.udacity.com/course/viewer#!/c-ud304-nd"
-                     }
-            ],
-        "learningGoals": [
-                "Get acquainted with Brackets text editor.",
-                "Create and edit simple HTML and CSS files to create an 'About me' webpage."
-            ],
-        "skillsAttained": [
-                "Set up Brackets with plugins for HTML and CSS lint tools and W3C validation."
-            ]
-        },
+        // {
+        // "ProjectID": "p0",
+        // "title": "About me",
+        // "heading": "Create and edit simple HTML and CSS files.",
+        // "dates": 2015,
+        // "description":  "a description of project 0.",
+        //
+        // "socialLinks": [
+        //     {
+        //       "name": "github",
+        //       "url": "http://www.github.com"
+        //     },
+        //     {
+        //       "name": "linkedin",
+        //       "url": "http://www.linkedin.com"
+        //     }
+        // ],
+        // "images":   [
+        //   {
+        //       "imageName": "assets/images/karl-2015",
+        //       "imgExtType": ".jpg",
+        //       "imageDescription": "a picture of me 2015"
+        //   },
+        //   {
+        //       "imageName": "assets/images/karlAug2016",
+        //       "imgExtType": ".jpg",
+        //       "imageDescription": "a picture of me 2016"
+        //   }
+        // ],
+        // "projectCourses": [
+        //             {
+        //                 "name": "Intro to HTML and CSS.",
+        //                 "url": "https://www.udacity.com/course/viewer#!/c-ud304-nd"
+        //              }
+        //     ],
+        // "learningGoals": [
+        //         "Get acquainted with Brackets text editor.",
+        //         "Create and edit simple HTML and CSS files to create an 'About me' webpage."
+        //     ],
+        // "skillsAttained": [
+        //         "Set up Brackets with plugins for HTML and CSS lint tools and W3C validation."
+        //     ]
+        // },
         {
         "ProjectID": "p1",
         "title": "Build a Portfolio Site",
         "heading": "A Bootstrap responsive website.",
         "dates": 2015,
         "description":  "Build a Portfolio Site.",
-        "websiteURL": "http://www.google.com",
+        "websiteURL": "",
+        "socialLinks": [],
         "images":   [],
         "projectCourses": [
 
@@ -328,16 +341,16 @@ var projects = {
         "heading": "Javascript Challenge.",
         "dates": 2015,
         "description":  "Build a JSON data resume.",
-        "websiteURL": "http://www.google.com",
+        "socialLinks": [],
         "images":   [],
         "projectCourses": [
 
                 {
-                    name: "JavaScript Basics.",
+                    "name": "JavaScript Basics.",
                     "url": "https://www.udacity.com/course/viewer#!/c-ud804-nd"
                 },
                  {
-                    name: "Intro to JQuery.",
+                    "name": "Intro to JQuery.",
                     "url": "https://www.udacity.com/course/viewer#!/c-ud245-nd"
                 }
 
@@ -356,26 +369,35 @@ var projects = {
         "title": "Classic Arcade Game Clone",
         "heading": "Object Orientated Javascript.",
         "dates": 2015,
-        "description":  "HTML5 Canvas Game.",
+        "description":  "A javascript and HTML5 Canvas Game. This project uses HTML canvas direct drawing using javascript sprites.",
         "websiteURL": "http://www.google.com",
-        "images":   [
+        "socialLinks": [
             {
-                imageName: "assets/images/Frogger_game_arcade",
-                imgExtType: ".png"
+              "name": "github",
+              "url": "http://www.github.com"
             },
             {
-                imageName: "assets/images/Atari2600_frogger",
-                imgExtType: ".jpg"
+              "name": "linkedin",
+              "url": "http://www.linkedin.com"
+            }
+        ],
+        "images":   [
+            {
+                "imageName": "assets/images/Atari2600_frogger",
+                "imgExtType": ".jpg",
+                "altText": "Frogger 2",
+                "imageHeading": "frogger2 heading",
+                "imageDescription": "Another frogger screenshot description."
             }
           ],
         "projectCourses": [
 
                 {
-                    name: "Object-Orientated JavaScript.",
+                    "name": "Object-Orientated JavaScript.",
                     "url": "https://www.udacity.com/course/viewer#!/c-ud015-nd"
                 },
                 {
-                    name: "HTML5 Canvas.",
+                    "name": "HTML5 Canvas.",
                     "url": "https://www.udacity.com/course/viewer#!/c-ud292-nd"
                 }
 
@@ -392,33 +414,62 @@ var projects = {
 
     "display": function() {
 
-        for (var project in projects.projects) {
-            // format html project
-            var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-            var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-            var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-// ADD PROJECT ENTRY
-            $("#projects").append(HTMLprojectStart);
-            $(".project-entry:last").append(formattedTitle);
-            $(".project-entry:last").append(formattedDates);
-            $(".project-entry:last").append(formattedDescription);
+      for (var projectIndex in projects.projects) {
+          var projectRef = projects.projects[projectIndex];
+          // format html project
+          var formattedTitle = HTMLprojectTitle.replace("%data%", projectRef.title);
+          var formattedHeading = HTMLprojectHeading.replace("%data%", projectRef.heading);
+          // var formattedDates = HTMLprojectDates.replace("%data%", projectRef.dates);
+          var formattedDescription = HTMLprojectDescription.replace("%data%", projectRef.description);
 
-            // if any project images add formatted to project entry
-            if (projects.projects[project].images.length > 0) {
+          if (projectRef.hasOwnProperty("websiteURL")) {
+            var formattedWebsiteLink = HTMLwebsiteLink.replace("%websiteURL%", projectRef.websiteURL);
+          }
 
-                for (var arrayIndex in projects.projects[project].images) {
-                    var imageNameRef = projects.projects[project].images[arrayIndex].imageName;
-                    var imageExtType = projects.projects[project].images[arrayIndex].imgExtType;
-                    // format html project image
-                    var formattedImage = HTMLprojectImage.replace(/%imageName%/g, imageNameRef).replace(/%imgExtType%/g, imageExtType);
+          // ADD PROJECT ENTRY
+          $("#projects").append(HTMLprojectStart);
+          $(".project-entry:last").append(formattedTitle);
+          $(".project-entry:last").append(formattedHeading);
+          $(".project-entry:last").append(formattedDescription);
 
-                    // ADD PROJECT IMAGE(S)
-                    $(".project-entry:last").append(formattedImage);
+          // PROJECT IMAGES - add formatted to project entry
+          if (projectRef.images.length > 0) {
+            $(".project-entry:last").append(HTMLprojectGalleryStart);
+              for (var arrayIndex in projects.projects[projectIndex].images) {
+                  var imageObjRef = projects.projects[projectIndex].images[arrayIndex];
+                  // formatted html project image
+                  var formattedProjectImage = HTMLprojectImage
+                        .replace(/%imageName%/g, imageObjRef.imageName)
+                        .replace(/%imgExtType%/g, imageObjRef.imgExtType)
+                        .replace("%altText%", imageObjRef.altText)
+                        .replace("%imageHeading%", imageObjRef.imageHeading)
+                        .replace(/%imageDescription%/g, imageObjRef.imageDescription);
 
-                }
+                  // ADD PROJECT IMAGE(S)
+                  $(".project-entry:last").append(formattedProjectImage);
+              }
+            $(".project-entry:last").append(HTMLprojectGalleryEnd);
+          }
 
-            }
-        }
+          if (projectRef.hasOwnProperty("websiteURL")) {
+            $(".project-entry:last").append(formattedWebsiteLink);
+          }
+
+          // project social links
+          if (projectRef.socialLinks.length > 0) {
+
+              for (var socialIndex in projectRef.socialLinks) {
+                var socialLinkRef =  projectRef.socialLinks[socialIndex];
+                var formattedSocialLink = HTMLsocialSiteLink
+                        .replace(/%socialName%/g, socialLinkRef.name)
+                        .replace("%socialURL%", socialLinkRef.url);
+
+                // ADD A SOCIAL WEBSITE LINK
+                $(".project-entry:last").append(formattedSocialLink);
+              }
+
+          }
+      }
     }
 };
 
